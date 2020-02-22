@@ -1,0 +1,1 @@
+jQuery(window).on("scroll",function(){if(jQuery(window).scrollTop()>95){jQuery(".live-nav").addClass("solid")}else{jQuery(".live-nav").removeClass("solid")}});

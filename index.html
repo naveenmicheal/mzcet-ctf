@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://www.pluralsight.com/live -->
+<html lang="en" class=""><link type="text/css" id="dark-mode" rel="stylesheet" href="#"><style type="text/css" id="dark-mode-custom-style"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta name="keywords">
+<meta name="description" content="CTF (Capture The Flag) information security competition organized on Mount Zion College of Engineering Technology on March 3
+">
+
+<meta name="robots" content="index, follow">
+<meta name="content-type" content="Page">
+<meta name="categories" content="page">
+<meta name="cludo:category" content="page">
+<script data-cfasync="false">window.wcmmodedisabled = true;</script>
+<script type="text/javascript" async="" defer="" src="./index_files/saved_resource"></script>
+<script type="text/javascript" src="./index_files/dnb_coretag_v4.min.js"></script>
+<script data-cfasync="false">
+function getParameterByName(e,n){n||(n=window.location.href),e=e.replace(/[\[\]]/g,"\\$&");var o=new RegExp("[?&]"+e+"(=([^&#]*)|&|#|$)").exec(n);return o&&o[2]?decodeURIComponent(o[2].replace(/\+/g," ")):""}function changeHistoryQueryParam(e,n,o,t,a){if(history.pushState){var i=""==window.location.search?"?":window.location.search;if(-1!==decodeURIComponent(i).indexOf(e+"=")){var d=getParameterByName(e);if(t)if(o){var c=(p=d.split(",")).indexOf(n);if(c>-1&&p.splice(c,1),0===p.length){var r=new RegExp("&?"+e+"=[^&]*","g");i=i.replace(r,"")}else i=i.replace(e+"="+encodeURIComponent(d),e+"="+encodeURIComponent(p.join(",")))}else{var p=[];d?p=d.split(","):d="",-1===p.indexOf(n)&&(p.push(n),i=i.replace(e+"="+encodeURIComponent(d),e+"="+encodeURIComponent(p.join(","))))}else if(o){r=new RegExp("&?"+e+"=[^&]*","g");i=i.replace(r,"")}else i=i.replace(e+"="+encodeURIComponent(d),e+"="+encodeURIComponent(n))}else o||(i+="?"==i?e+"="+encodeURIComponent(n):"&"+e+"="+encodeURIComponent(n));var s=window.location.protocol+"//"+window.location.host+window.location.pathname+(a?decodeURIComponent(i):i);window.history.pushState({path:s},"",s)}}function dtmEventTrigger(e,n){var o=new CustomEvent(e,{bubbles:!0,cancelable:!1,detail:n});document.querySelector("body").dispatchEvent(o)}window.loadRemoteScript=function(e,n,o,t,a){var i=document.createElement("script");i.type=n||"text/javascript",i.id=t||null,1==o&&(i.async=o||1),i.readyState?i.onreadystatechange=function(){"loaded"!=i.readyState&&"complete"!=i.readyState||(i.onreadystatechange=null,a())}:i.onload=function(){a()},i.src=("https:"==document.location.protocol?"https://":"http://")+e,document.getElementsByTagName("head")[0].appendChild(i)};var doNotTrack=document.cookie.indexOf("ps_optout=1")>-1||document.URL.indexOf("dnt=true")>-1,oneHour=36e5,oneYear=24*oneHour*365,trkDate=new Date(Date.now()+oneHour);document.cookie="ps_trk="+(doNotTrack?"0":"1")+"; expires="+trkDate.toUTCString()+"; path=/"+(document.URL.indexOf("pluralsight.com")>-1?"; domain=pluralsight.com":"");var firstVisit=-1==document.cookie.indexOf("fv=");document.cookie="fv="+(firstVisit?"1":"0")+"; expires="+new Date(Date.now()+oneYear).toUTCString()+"; path=/"+(document.URL.indexOf("pluralsight.com")>-1?"; domain=pluralsight.com":""),window.dnbData={},document.cookie.indexOf("ps_trk=1")>-1&&"undefined"!=typeof dnbvid&&dnbvid.getData("api7831","json","T",function(e){window.dnbData=e,window.promoCheck&&!window.promoCheckRan&&window.promoCheck()}),document.addEventListener("at-content-rendering-succeeded",function(){window.targetFinished=!0},!1),document.addEventListener("at-content-rendering-failed",function(){window.targetFinished=!0},!1),document.addEventListener("at-content-rendering-no-offers",function(){window.targetFinished=!0},!1);
+</script>
+<script data-cfasync="false" src="./index_files/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="./index_files/uber.min.dfaaa88ca1591ceec7e579506201de90.css" type="text/css">
+<link rel="stylesheet" id="font-preloader" href="./index_files/fonts.css" as="style" onload="if (document.querySelector(&#39;body&#39;)){ document.querySelector(&#39;body&#39;).classList.remove(&#39;font-loading&#39;);this.onload=null;this.rel=&#39;stylesheet&#39; }">
+<script>
+        window.onload = function(){
+            if (jQuery('link[rel="stylesheet"][href*="cloud.typography.com"]').length == 0){
+                //typography didn't load - browser may not support preload.
+                jQuery('link[href*="cloud.typography.com"]').remove();
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = '//cloud.typography.com/6966154/7969012/css/fonts.css';
+                document.getElementsByTagName('HEAD')[0].appendChild(link);
+                document.querySelector('body').classList.remove('font-loading');
+            }
+        };
+    </script>
+<noscript><style>
+        .font-loading .title2 h1.title-font-tungsten,
+        .font-loading .title2 h2.title-font-tungsten,
+        .font-loading .title2 h3.title-font-tungsten,
+        .font-loading .title2 h4.title-font-tungsten,
+        .font-loading .title2 h5.title-font-tungsten,
+        .font-loading .title2 h6.title-font-tungsten {
+            display:block !important;
+        }
+    </style></noscript>
+<script data-cfasync="false">
+var appHost="www-stage.pluralsight.com"==window.location.host?"https://app-stage.pluralsight.com":"https://app.pluralsight.com",pagePath=window.location.pathname,redirectPath="",appRedirectTag=document.head.querySelector("[name~='appRedirectPath'][content]");if(appRedirectTag&&(redirectPath=appRedirectTag.content.toString()),!window.is404)if(0==pagePath.indexOf("/product/channels")&&(redirectPath="/channels",-1<document.URL.indexOf("cid=")&&(redirectPath="/channels/details/"+getParameterByName("cid"))),-1<document.cookie.indexOf("www-status-production=")&&-1==document.cookie.indexOf("midCheckout")&&"www.pluralsight.com"==window.location.host||-1<document.cookie.indexOf("www-status-staging=")&&-1==document.cookie.indexOf("midCheckout")&&"www-stage.pluralsight.com"==window.location.host){var aidParam=getParameterByName("aid"),vidParam=getParameterByName("vid"),paramsString="";""!==aidParam&&(paramsString+=(paramsString.includes("?")?"&":"?")+"aid="+aidParam),""!==vidParam&&(paramsString+=(paramsString.includes("?")?"&":"?")+"vid="+vidParam),""!=redirectPath&&-1==document.URL.indexOf("show=home")?window.location=appHost+redirectPath+paramsString:jQuery(document).ready(function(){var t=appHost+"/id/dashboard",e=jQuery(".header_sign_up_link");e.text("My Dashboard"),e.attr("href",t),e.attr("title","My Dashboard"),jQuery(".header_sign_in_link").attr("style","display: none !important")})}else 0!=pagePath.indexOf("/customer/")||"www-stage.pluralsight.com"!=window.location.host&&"www.pluralsight.com"!=window.location.host||-1!=document.cookie.indexOf("midCheckout")?""!=redirectPath?jQuery(document).ready(function(){jQuery(".sign_in_link").attr("href",appHost+"/id?redirectTo="+encodeURIComponent(redirectPath))}):jQuery(document).ready(function(){jQuery(".sign_in_link").attr("href",appHost+"/id?")}):window.location=appHost+"/id?redirectTo="+encodeURIComponent(document.URL);
+</script>
+<script data-cfasync="false">
+function setSelectedInterest(e){var t=new Date;t.setTime(t.getTime()+6048e5),document.cookie="ps_si="+e+"; expires="+t.toUTCString()+"; path=/",window.selectedInterest=e}function setSelectedConsumerType(e){var t=new Date;t.setTime(t.getTime()+6048e5),document.cookie="ps_sct="+e+"; expires="+t.toUTCString()+"; path=/",window.selectedConsumerType=e}function setSelectedBusinessType(e){var t=new Date;t.setTime(t.getTime()+6048e5),document.cookie="ps_sbt="+e+"; expires="+t.toUTCString()+"; path=/",window.selectedBusinessType=e}if(document.cookie.indexOf("ps_si=")>-1&&(window.selectedInterest=document.cookie.split("ps_si=")[1].split(";")[0]),document.cookie.indexOf("ps_sct=")>-1&&(window.selectedConsumerType=document.cookie.split("ps_sct=")[1].split(";")[0]),document.cookie.indexOf("ps_sbt=")>-1&&(window.selectedBusinessType=document.cookie.split("ps_sbt=")[1].split(";")[0]),-1==document.cookie.indexOf("drift_ab")){var driftAbDate=new Date;driftAbDate.setTime(driftAbDate.getTime()+6048e5);var driftAb=0==Math.floor(2*Math.random())?"A":"B";document.cookie="drift_ab="+driftAb+"; expires="+driftAbDate.toUTCString()+"; path=/"}var inflDate=new Date;inflDate.setTime(inflDate.getTime()+18e5);var visNumDate=new Date;if(visNumDate.setTime(visNumDate.getTime()+31536e6),document.cookie.indexOf("ps_infl")>-1){var infl=document.cookie.split("ps_infl=")[1].split(";")[0];document.cookie="ps_infl="+infl+"; expires="+inflDate.toUTCString()+"; path=/"}else{var visNum=1;document.cookie.indexOf("ps_visNum")>-1&&(visNum=parseInt(document.cookie.split("ps_visNum=")[1].split(";")[0])+1),document.cookie="ps_visNum="+visNum+"; expires="+visNumDate.toUTCString()+"; path=/",getParameterByName("aid")||getParameterByName("vid")||""!=document.referrer&&-1==document.referrer.indexOf("pluralsight.com")?document.cookie="ps_infl=1; expires="+inflDate.toUTCString()+"; path=/":document.cookie="ps_infl=0; expires="+inflDate.toUTCString()+"; path=/"}
+</script>
+<script src="./index_files/launch-EN123ab280156b405ca2abf6acf664d9a0.min.js" async=""></script>
+
+<meta name="msapplication-config" content="/etc/clientlibs/pluralsight/main/images/favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<title>CTF-MZCET | 2020</title>
+<meta property="og:title" content="CTF-MZCET | 2020">
+<meta name="twitter:title" content="CTF-MZCET | 2020">
+<link rel="stylesheet" type="text/css" href="./index_files/cludo-search-default.min.css">
+<!-- <script src="./index_files/analytics.js" async=""></script> -->
+<script src="./index_files/AppMeasurement.min.js" async=""></script><style id="at-makers-style" class="at-flicker-control">
+.mboxDefault {visibility: hidden;}
+</style><style type="text/css">.fancybox-margin{margin-right:15px;}</style><script src="./index_files/RC87583ae17a9a4ff8951fd6fed549cf37-source.min.js" async=""></script><script src="./index_files/RC101b5af71b3847f88e8c2d54ff0731eb-source.min.js" async=""></script></head>
+<body class="mode-disabled pslive-page" data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0">
+<div class="site-wrap">
+<div class="nav-context ">
+<link rel="stylesheet" href="./index_files/livepage.min.4f713c0b8887748e1f437de4a2c77c0e.css" type="text/css">
+<noindex>
+<nav class="live-nav solid">
+<a href="#">CTF-MZCET | 2020</a>
+<!-- <a href="http://www.pluralsightlive.com/" class="live-logo"></a> -->
+<input type="checkbox" id="nav" class="hidden">
+<label for="nav" class="nav-open"><i></i><i></i><i></i></label>
+<div class="nav-container">
+<ul class="inline-list">
+<li class="hide-for-large-up"><a href="#" data-aa-title="get-live-mobile">Registration</a></li>
+<li class="hide-for-large-up"><a href="#" data-aa-title="get-live-mobile">About</a></li>
+<li class="hide-for-large-up"><a href="#" data-aa-title="get-live-mobile">Contact</a></li>
+<li class="hide-for-large-up"><a href="#" data-aa-title="get-live-mobile">Events</a></li>
+<!-- <li><a href="https://www.pluralsight.com/"><img src="./index_files/ps-icon.png" alt="Pluralsight"></a></li> -->
+</ul>
+</div>
+<a href="" class="button live-button button--blue show-for-large-up" data-aa-title="get-live">Registration</a>
+</nav>
+</noindex>
+<div id="site-promo" style="display:none;">
+<div id="site-promo-content"></div>
+<div class="promo-close-button">×</div>
+</div>
+<script>
+var noDBpromo=!0;function showPromoIfPermitted(){(-1==document.cookie.indexOf("site-promo-closed=1")||window.blockPromoHide)&&(jQuery("#site-promo .promo-wrapper-contents").length>-1&&""!=jQuery("#site-promo .promo-wrapper-contents").html().trim()&&jQuery("#site-promo").show(),jQuery("#site-promo .promo-close-button").click(function(){var o=new Date;o.setTime(o.getTime()+432e5),document.cookie="site-promo-closed=1; expires="+o.toUTCString()+"; path=/",jQuery("#site-promo").slideUp(300)}),window.promoShown=!0,window.setStickies&&window.setStickies(),dtmEventTrigger("ps.promoShown",{}),jQuery(document).ready(function(){setTextHighlights()}))}function promoCheck(){if(window.promoCheckRan=!0,document.URL.indexOf("b2b=true")>-1||document.URL.indexOf("nopromos=true")>-1){var o=new Date;o.setTime(o.getTime()+6048e5),document.cookie="nopromos=1; expires="+o.toUTCString()+"; path=/; domain=pluralsight.com"}if(-1==document.cookie.indexOf("nopromos=1")&&("www.pluralsight.com"==window.location.host||"www-stage.pluralsight.com"==window.location.host||"www-stage2.pluralsight.com"==window.location.host||"learn.pluralsight.com"==window.location.host||"learn-stage.pluralsight.com"==window.location.host||"www.javascript.com"==window.location.host||"www-stage.javascript.com"==window.location.host)){var n=!1;window.location.host.indexOf("-stage.")>-1&&(n=!0);var e="none",t="none",a=(new Date).valueOf();!noDBpromo&&dnbData.companyName&&(e=dnbData.companyName,t=dnbData.industryNaics),jQuery.ajax({url:"/discounts/api/global-promo?company="+encodeURIComponent(e)+"&audience="+encodeURIComponent(t)+"&time="+a,headers:{authorization:"aem"}}).done(function(o){(o.campaignId||window.forceCampaignCode)&&(window.globalPromos=o.promos,window.campaignCode=window.forceCampaignCode||o.campaignId,jQuery.ajax({url:"/content/pluralsight/en/global/promos/"+campaignCode+".html?time="+a}).done(function(o){var e=function(o){return"learn.pluralsight.com"!=window.location.host&&"learn-stage.pluralsight.com"!=window.location.host&&"www.javascript.com"!=window.location.host&&"www-stage.javascript.com"!=window.location.host||(o=0==o.indexOf("/jscom")&&window.location.hostname.indexOf("javascript.com")>-1?o.substring(6,o.length):0!=o.indexOf("/landing-pages")||"learn.pluralsight.com"!=window.location.hostname&&"learn-stage.pluralsight.com"!=window.location.hostname?"////":o.substring(14,o.length)),o},t=jQuery(o).find(".promo-block-filters").data("blockedpaths"),a=t?t.split(","):[],r=!1;for(i in a){var c=a[i].trim();0==c.indexOf("=")?(c=c.substring(1,c.length),window.location.pathname==e(c)&&(r=!0,n&&console.log("Promo banners blocked on page."))):0==window.location.pathname.indexOf(e(c))&&(r=!0,n&&console.log("Promo banners blocked on page."))}if(!r){var m=jQuery(o).find(".promo-wrapper-filter"),s=!1;jQuery.each(m,function(o,n){var t=jQuery(n).data("allowedpaths"),a=t?t.split(","):[],r=!1;for(i in a){var c=a[i].trim();0==c.indexOf("=")?(c=c.substring(1,c.length),window.location.pathname==e(c)&&(r=!0)):0==window.location.pathname.indexOf(e(c))&&(r=!0)}if(r)return jQuery("#site-promo-content").html(n),jQuery("#site-promo-content img[data-lazysrc], #site-promo-content .lazy-bg").each(function(o,n){"undefined"!=typeof loadLazysrc&&loadLazysrc(n)}),window.blockPromoHide=jQuery(n).data("blockhiding"),showPromoIfPermitted(),s=!0,!1}),s||n&&console.log("No allowed banner found on promo config page.")}}).fail(function(){n&&console.log("No promo page found for campaign code "+campaignCode)}),window.promoTriggered=!0,dtmEventTrigger("ps.promoTriggered",{})),window.promoCheckCompleted=!0})}}(window.dnbData.status||noDBpromo)&&promoCheck(),setTimeout(function(){window.promoCheckRan||window.promoCheck()},3e3);
+</script>
+<div>
+<script type="text/javascript" src="./index_files/search-script.min.js"></script>
+<!-- <script>
+
+        var element = document.createElement("link");
+        element.setAttribute("rel", "stylesheet");
+        element.setAttribute("type", "text/css");
+        element.setAttribute("href", "https://customer.cludo.com/css/overlay/cludo-search-default.min.css");
+        document.getElementsByTagName("head")[0].appendChild(element);
+
+        var CludoSearch;
+        (function () {
+            var cludoSettings = {customerId: 10000847, engineId: 10001278, language: 'en', searchInputs: ['cludo-search-form','cludo-search-form']};
+            CludoSearch= new Cludo(cludoSettings);
+            CludoSearch.init();
+        })();
+
+    </script> -->
+<!--[if lte IE 9]>
+    <script src="https://api.cludo.com/scripts/xdomain.js" slave="https://api.cludo.com/proxy.html" type="text/javascript"></script>
+    <![endif]-->
+</div>
+<!-- <script>
+                if (Math.random() > .5){
+                    if (CludoSearch){
+                        CludoSearch.engineId = 10001374; //use beta engine 50% of the time
+                    }
+                }
+            </script> -->
+<div id="content" role="main">
+<div class="contain"><div class="animation-wrapper section">
+<div class="animation-wrapper-container rellax animation-unique-QlCaCAID" data-rellax-speed="0" style="transform: translate3d(0px, 0px, 0px);">
+<div data-aos="fade-down" data-aos-duration="400" data-aos-delay="300" class="aos-init aos-animate">
+<div class="main clearfix">
+<div class="clearfix"><div class="free-form-component section">
+<style>
+  /* Theme */
+body {
+  background-color: #181818;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+body,
+p {
+  color: white;
+}
+.site-wrap {
+  background-color: inherit;
+}
+p:only-of-type, 
+p:last-of-type {
+    margin-bottom: 40px;
+}
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Tungsten A","Tungsten B";
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    line-height: 1;
+    margin: 0 0 40px;
+}
+h2 {
+    font-size: 4vw;
+}
+@media screen and (max-width: 1024px) {
+    h2 {
+        font-size: 56px;
+    }
+}
+@media screen and (max-width: 480px) {
+    h2 {
+        font-size: 42px;
+    }
+}
+small {
+    font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 40px;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+section {
+    position: relative;
+    padding: 15% 100px;
+    background-color: #181818;
+}
+@media screen and (max-width: 1200px) {
+    section {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    section {
+        padding: 150px 20px;
+    }
+}
+.row {
+    position: relative;
+    z-index: 2;
+    max-width: unset;
+}
+.button {
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.button.live-button {
+    padding: 10px 40px;
+    min-width: unset;
+    font-family: "Tungsten A","Tungsten B";
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+  transition: 0.3s all;
+}
+.button.live-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 0px 50px rgba(255,255,255,0.15);
+}
+@media screen and (max-width: 1024px) {
+    .button.live-button {
+        font-size: 24px;
+        padding: 10px 25px;
+    }
+}
+.button.live-button.pink {
+    background-color: #E72094;
+}
+.bg-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+}
+
+@media (min-width: 1025px) {
+    .bg-cover.shift-left {
+        left: 150px;
+    }
+
+    .bg-cover.shift-right {
+        right: 150px;
+    }
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+@media (min-width: 1025px) {
+    .flex-wrapper {
+        display: flex;
+    }
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+
+
+
+
+/* Colors */
+.bg-blue {
+    background-color: #0096AD;
+}
+
+.bg-pink {
+    background-color: #E40084;
+}
+
+.bg-green {
+    background-color: #4CB272;
+}
+
+.bg-yellow {
+    background-color: #FFBA0E;
+}
+
+.text-blue {
+    color: #0096AD;
+}
+
+.text-pink {
+    color: #E40084;
+}
+
+.text-green {
+    color: #4CB272;
+}
+
+.text-yellow {
+    color: #FFBA0E;
+}
+</style>
+<style>
+.home-hero h1 { font-size: 14vw; }
+@media (max-width: 1100px) { .home-hero h1 { font-size: 20vw; } }
+@media (max-width: 680px) { .home-hero h1 { font-size: 28vw; } }
+
+.block_recap_hero h1 {
+     font-size: 78px;
+}
+.block_recap_hero h1 .large-text {
+    display: block;
+    font-size: 100px;
+}
+
+@media only screen and (min-width: 1025px) {
+   .best-tile .image img { opacity: 0; transition: all 0.3s; }
+   .best-tile:hover .image img { opacity: 1; }
+}
+
+/* Utility */
+@media only screen and (max-width: 1024px) {
+   .m-text-center, .m-text-center .psbutton--right { text-align: center; }
+}
+</style>
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+	
+	$('a.scroll-link').click(function(e){
+		e.preventDefault();
+		$id = $(this).attr('href');
+		$('body,html').animate({
+			scrollTop: $($id).offset().top -20
+		}, 750);
+	});
+	
+});
+</script></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="generic-block section">
+<div id="home-hero_" class="hidden"></div>
+<div class="generic-block-wrapper darker block block--true-black block--left generic-block--auto padding-top-hundred-fifty padding-bottom-zero home-hero clearfix" style="background-image: url(&#39;head1.jpeg&#39;);background-position:center center;background-size:cover;background-repeat:no-repeat;">
+<div class="main clearfix">
+<div class="content clearfix"><div class="spacer section">
+<div class="spacer  " style="height:60px"></div>
+</div>
+<div class="column-control section">
+<div>
+<div class="container column-control-container ">
+<div class="row large       column-control--super-wide">
+<div class="large-12 columns "><div class="title2 section">
+<div data-emptytext="Title">
+<h6 class="title--pink     title--center    disableBottomMargin">
+Mount Zion College of Engineering and Technology    
+</h6>
+</div></div>
+<div class="title2 section">
+<div data-emptytext="Title">
+<h1 class=" title-font-tungsten    title--center   title--heavier disableBottomMargin">
+CTF - 2020
+</h1>
+</div></div>
+<div class="spacer section">
+<div class="spacer  " style="height:10px"></div>
+</div>
+<div class="title2 section">
+<div data-emptytext="Title">
+<h6 class="    desk-font-size-7 title--center    disableBottomMargin">
+March 8 | Mount Zion Campus | Thirumayam
+</h6>
+</div></div>
+<div class="spacer section">
+<div class="spacer  " style="height:80px"></div>
+</div>
+<div class="column-control section">
+<div>
+<div class="container column-control-container ">
+<div class="row large       ">
+<div class="large-12 columns "><div class="animation-wrapper section">
+<div class="animation-wrapper-container  animation-unique-rDsURBeO" data-rellax-speed="0">
+<div data-aos="fade-up" data-aos-duration="800" data-aos-delay="0" class="aos-init aos-animate">
+<div class="main clearfix">
+<div class="clearfix"><div class="generic-block section">
+<div id="m-text-center_" class="hidden"></div>
+<div class="generic-block-wrapper block block--custom-color block--left generic-block--auto padding-top-zero padding-bottom-zero m-text-center clearfix" style="background: #E72094;">
+<div class="main clearfix">
+<div class="content clearfix"><div class="column-control section">
+<div>
+<div class="container column-control-container ">
+<div class="row large     padding-top-twenty padding-bottom-twenty ">
+<div class="large-9 columns customPadding" style="padding-left: 20px; "><div class="title2 section">
+<div data-emptytext="Title">
+<h4 class=" title-font-tungsten mobile-font-size-4 tablet-font-size-3 desk-font-size-3    title--heavier disableBottomMargin">
+STRENGTEN YOUR INFORMATION SECURITY SKILLS 
+</h4>
+</div></div>
+</div>
+<div class="large-3 columns customPadding" style=" padding-right: 20px;"><div class="spacer section">
+<div class="spacer hide-for-small-only hide-for-medium-only" style="height:0px"></div>
+<div class="spacer show-for-medium-only" style="height:10px"></div>
+<div class="spacer show-for-small-only" style="height:10px"></div></div>
+<div class="ps-button section">
+<div data-emptytext="Button" class="psbutton--right">
+<div>
+<a href="#" target="_self" class="button  button--black 12  " data-aa-title="pink-banner-registration">
+get my pass
+</a>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="spacer section">
+<div class="spacer  " style="height:20px"></div>
+</div>
+<div class="column-control section">
+<div>
+<div class="container column-control-container ">
+<div class="row large  add-flex     column-control--super-wide">
+<div class="large-4 columns customPadding" style="padding-left: 0px; padding-right: 10px;"><div class="animation-wrapper section">
+<div class="animation-wrapper-container  animation-unique-NGUcJqzl" data-rellax-speed="0">
+<div data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" class="aos-init aos-animate">
+<div class="main clearfix">
+<div class="clearfix"><div class="generic-block section">
+<div id="best-tile_" class="hidden"></div>
+<div class="generic-block-wrapper block block--medium-gray block--left generic-block--auto padding-top-zero padding-bottom-zero best-tile clearfix" style="background-image: url(&#39;/whatisctf1.jpg&#39;);">
+<div class="main clearfix">
+<div class="content clearfix"><div class="column-control section">
+<div>
+<div class="container column-control-container ">
+<div class="row large     padding-top-hundred  ">
+<div class="large-12 columns customPadding" style="padding-left: 40px; padding-right: 40px;"><div class="spacer section">
+<div class="spacer  " style="height:21px"></div>
+</div>
+<div class="image section">
+
+
+<a href="https://www.youtube.com/embed/8ev9ZX9J45A?autoplay=1&amp;hd=1&amp;rel=0&amp;autohide=1&amp;modestbranding=1&amp;iv_load_policy=3" class="fancybox fancybox.iframe " target="_self">
+<img src="./index_files/image-res.img.a144239f-2942-4d00-9c72-40f9bdb22a4e.png" alt="Play Video" style=" max-height: 80px; " class="image--center ">
+</a>
+
+     
+ </div>
+<div class="spacer section">
+<div class="spacer  " style="height:60px"></div>
+</div>
+<div class="title2 section">
+<div data-emptytext="Title">
+<h3 class=" title-font-tungsten mobile-font-size-4 tablet-font-size-3 desk-font-size-3    title--heavier ">
+What is CTF?<br>Info Security
+</h3>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="spacer section">
+<div class="spacer  " style="height:20px"></div>
+</div>
+</div>
+<div class="large-4 columns customPadding" style="padding-left: 10px; padding-right: 10px;"><div class="animation-wrapper section">
+<div class="animation-wrapper-container  animation-unique-LthstoQx" data-rellax-speed="0">
+<div data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" class="aos-init aos-animate">
+<div class="main clearfix">
+<div class="clearfix"><div class="generic-block section">
+<div id="best-tile_" class="hidden"></div>
+<div class="generic-block-wrapper block block--medium-gray block--left generic-block--auto padding-top-zero padding-bottom-zero best-tile clearfix" style="background-image: url(&#39;/event.jpg&#39;);">
+<div class="main clearfix">
+<div class="content clearfix"><div class="column-control section">
+<div>
+<div class="container column-control-container ">
+<div class="row large     padding-top-hundred  ">
+<div class="large-12 columns customPadding" style="padding-left: 40px; padding-right: 40px;"><div class="spacer section">
+<div class="spacer  " style="height:21px"></div>
+</div>
+<div class="image section">
+<a href="https://www.youtube.com/embed/oSbCNt1CYZ8?autoplay=1&amp;hd=1&amp;rel=0&amp;autohide=1&amp;modestbranding=1&amp;iv_load_policy=3" class="fancybox fancybox.iframe " target="_self">
+ <img src="./index_files/image-res.img.a144239f-2942-4d00-9c72-40f9bdb22a4e.png" alt="Play Video" style=" max-height: 80px; " class="image--center ">
+</a>
+</div>
+<div class="spacer section">
+<div class="spacer  " style="height:60px"></div>
+</div>
+<div class="title2 section">
+<div data-emptytext="Title">
+<h3 style="text-shadow: 5px 5px black" class=" title-font-tungsten mobile-font-size-4 tablet-font-size-3 desk-font-size-3    title--heavier ">
+TECH QUEST<br>2020
+</h3>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="spacer section">
+<div class="spacer  " style="height:20px"></div>
+</div>
+</div>
+<div class="large-4 columns customPadding" style="padding-left: 10px; padding-right: 0px;"><div class="animation-wrapper section">
+<div class="animation-wrapper-container  animation-unique-wVmQbjZu" data-rellax-speed="0">
+<div data-aos="fade-up" data-aos-duration="800" data-aos-delay="400" class="aos-init aos-animate">
+<div class="main clearfix">
+<div class="clearfix"><div class="generic-block section">
+<a href="https://www.pluralsight.com/blog/news/live-2019-ultimate-recap" class="full-block-link ">
+<div class="generic-block-wrapper block block--medium-gray block--left generic-block--auto padding-top-zero padding-bottom-zero clearfix" style="background-image: url(&#39;mz.jpg&#39;);">
+<div class="main clearfix">
+<div class="content clearfix"><div class="column-control section">
+<div>
+<div class="container column-control-container ">
+<div class="row large     padding-top-fifty  ">
+<div class="large-12 columns customPadding" style="padding-left: 40px; padding-right: 40px;"><div class="spacer section">
+<div class="spacer  " style="height:210px"></div>
+</div>
+<div class="title2 section">
+<div data-emptytext="Title">
+<h3 style="text-shadow: 5px 5px black" class=" title-font-tungsten mobile-font-size-4 tablet-font-size-3 desk-font-size-3    title--heavier ">
+MZCET<br>THIRUMAYAM
+</h3>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="spacer section">
+<div class="spacer  " style="height:20px"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="generic-block section">
+<div class="generic-block-wrapper block block--custom-color block--left generic-block--auto padding-top-zero padding-bottom-zero clearfix" style="background: #2c3e50">
+<div class="main clearfix">
+<div class="content clearfix"><div class="column-control section">
+<div>
+<div class="container column-control-container ">
+<div class="row large     padding-top-twenty  ">
+<div class="large-12 columns customPadding" style="padding-left: 20px; padding-right: 20px;"><div class="animation-wrapper section">
+<div class="animation-wrapper-container  animation-unique-aWHbgDcb" data-rellax-speed="0">
+<div data-aos="fade-up" data-aos-duration="800" data-aos-delay="0" class="aos-init aos-animate">
+<div class="main clearfix">
+<div class="clearfix"><div class="title2 section">
+<div data-emptytext="Title">
+<h2  class="title--white title-font-tungsten    title--center   title--heavier disableBottomMargin" style="color: white">
+CTF GAME TOPICS
+</h2>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="column-control section">
+<div>
+<div class="container column-control-container ">
+<div class="row medium     padding-top-twenty padding-bottom-twenty fullwidth">
+<div class="medium-4 columns customPadding" style="padding-left: 20px; padding-right: 10px;"><div class="animation-wrapper section">
+<div class="animation-wrapper-container  animation-unique-MgCNbIOO" data-rellax-speed="0">
+<div data-aos="fade-up" data-aos-duration="800" data-aos-delay="50" class="aos-init aos-animate">
+<div class="main clearfix">
+<div class="clearfix"><div class="generic-block section">
+<div class="generic-block-wrapper block block--transparent block--left generic-block--auto padding-top-zero padding-bottom-zero clearfix" style="background-image: url(&#39;/web.jpg&#39;);">
+<div class="main clearfix">
+<div class="content clearfix"><div class="column-control section">
+<div>
+<div class="container column-control-container ">
+<div class="row large     padding-top-hundred  ">
+<div class="large-12 columns customPadding" style="padding-left: 40px; padding-right: 40px;"><div class="spacer section">
+<div class="spacer hide-for-small-only hide-for-medium-only" style="height:180px"></div>
+<div class="spacer show-for-medium-only" style="height:140px"></div>
+<div class="spacer show-for-small-only" style="height:280px"></div></div>
+<div class="title2 section">
+<div data-emptytext="Title">
+<h2 class=" title-font-tungsten   desk-font-size-2    title--heavier ">
+Web<br>Exploitation
+</h2>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="spacer section">
+<div class="spacer hide-for-small-only hide-for-medium-only" style="height:0px"></div>
+<div class="spacer show-for-medium-only" style="height:20px"></div>
+<div class="spacer show-for-small-only" style="height:20px"></div></div>
+</div>
+<div class="medium-4 columns customPadding" style="padding-left: 10px; padding-right: 10px;"><div class="animation-wrapper section">
+<div class="animation-wrapper-container  animation-unique-QDjfUvAH" data-rellax-speed="0">
+<div data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="aos-init aos-animate">
+<div class="main clearfix">
+<div class="clearfix"><div class="generic-block section">
+<div class="generic-block-wrapper block block--transparent block--left generic-block--auto padding-top-zero padding-bottom-zero clearfix" style="background-image: url(&#39;/2.jpg&#39;);">
+<div class="main clearfix">
+<div class="content clearfix"><div class="column-control section">
+<div>
+<div class="container column-control-container ">
+<div class="row large     padding-top-hundred  ">
+<div class="large-12 columns customPadding" style="padding-left: 40px; padding-right: 40px;"><div class="spacer section">
+<div class="spacer hide-for-small-only hide-for-medium-only" style="height:180px"></div>
+<div class="spacer show-for-medium-only" style="height:140px"></div>
+<div class="spacer show-for-small-only" style="height:280px"></div></div>
+<div class="title2 section">
+<div data-emptytext="Title">
+<h2 class=" title-font-tungsten   desk-font-size-2    title--heavier ">
+CRYPTOGRAPHY,<br>NETWORKS
+</h2>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="animation-wrapper section">
+<div class="animation-wrapper-container rellax animation-unique-rnObfCzL" data-rellax-speed="0" style="transform: translate3d(0px, 0px, 0px);">
+<div class="main clearfix">
+<div class="clearfix">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="spacer section">
+<div class="spacer hide-for-small-only hide-for-medium-only" style="height:0px"></div>
+<div class="spacer show-for-medium-only" style="height:20px"></div>
+<div class="spacer show-for-small-only" style="height:20px"></div></div>
+</div>
+<div class="medium-4 columns customPadding" style="padding-left: 10px; padding-right: 20px;"><div class="animation-wrapper section">
+<div class="animation-wrapper-container  animation-unique-rxZJeFHV" data-rellax-speed="0">
+<div data-aos="fade-up" data-aos-duration="800" data-aos-delay="150" class="aos-init aos-animate">
+<div class="main clearfix">
+<div class="clearfix"><div class="generic-block section">
+<div class="generic-block-wrapper block block--transparent block--left generic-block--auto padding-top-zero padding-bottom-zero clearfix" style="background-image: url(&#39;/os.png&#39;);">
+<div class="main clearfix">
+<div class="content clearfix"><div class="column-control section">
+<div>
+<div class="container column-control-container ">
+<div class="row large     padding-top-hundred  ">
+<div class="large-12 columns customPadding" style="padding-left: 40px; padding-right: 40px;"><div class="spacer section">
+<div class="spacer hide-for-small-only hide-for-medium-only" style="height:180px"></div>
+<div class="spacer show-for-medium-only" style="height:140px"></div>
+<div class="spacer show-for-small-only" style="height:280px"></div></div>
+<div class="title2 section">
+<div data-emptytext="Title">
+<h2 class=" title-font-tungsten   desk-font-size-2    title--heavier ">
+OS and<br>Analysis  
+</h2>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="animation-wrapper section">
+<div class="animation-wrapper-container rellax animation-unique-jXFUiWFt" data-rellax-speed="0" style="transform: translate3d(0px, 0px, 0px);">
+<div class="main clearfix">
+<div class="clearfix">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="display: none" class="free-form-component section">
+<style>
+  section.live-relive::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, black, transparent);
+    z-index: 9;
+}
+</style>
+<style>
+    .live-relive { background: #000; }
+    .live-relive .row {
+        z-index: 2;
+    }
+    .live-relive .image-left {
+        right: unset; 
+      /*  background-image: url(https://www.pluralsight.com/content/dam/pluralsight2/events/2019/live/recap/recap-collage-4.jpg);*/
+        width: 30vw; 
+        left: 0; 
+        bottom: unset; 
+        height: 24vw;
+    }
+    .live-relive .image-right {
+        right: 0;
+       /* background-image: url(https://www.pluralsight.com/content/dam/pluralsight2/events/2019/live/recap/recap-collage-1.jpg); */
+        width: 52vw; 
+        left: unset; 
+        background-position: left center; 
+        bottom: unset; 
+        height: 50vw;
+        z-index: 1;
+    }
+    .live-relive .malala .scribble {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+    }
+    .live-relive--copy {
+        padding: 100px 35px;
+    }
+    @media (max-width: 1024px) {
+        .live-relive {
+            display: flex; 
+            flex-wrap: wrap; 
+            padding: 0;
+        }
+        .live-relive .bg-cover {
+            width: 50% !important; 
+            height: 35vw !important; 
+            position: relative;
+        }
+        .live-relive .bg-cover:nth-of-type(2) {
+            z-index: 0 !important;
+        }
+        .live-relive .malala .scribble {
+            top: 0;
+            left: -40px;
+            width: 170px;
+        }
+    }
+    @media (max-width: 768px) {
+        .live-relive .malala .scribble {
+            display: none;
+        }
+    }
+    @media (min-width: 1025px) {
+        .live-relive--copy {
+            width: 30%;
+            margin-left: 30%;
+            padding: 0;
+        }
+        .live-relive .malala {
+            min-height: 700px; 
+        }
+    }
+</style>
+
+<section style="display:none" class="live-relive">
+<div class="bg-cover image-left aos-init aos-animate" data-aos="fade-right" data-aos-duration="1500"></div>
+<div class="bg-cover image-right aos-init aos-animate" data-aos="fade-left" data-aos-duration="2500" data-aso-delay="2000">
+</div>
+<div class="row">
+<div class="live-relive--copy aos-init aos-animate" data-aos="fade-up" data-aos-duration="3000" data-aso-delay="2500">
+<small class="text-pink">Recap</small>
+<h2>Unforgettable. <br>Electrifying. <br>Future-focused. </h2>
+<p>From the knowledge-packed sessions and mind-blowing speakers to a one-of-a-kind robotic music machine, LIVE was unlike anything you’ve ever experienced.</p>
+
+</div>
+</div>
+</section>
+</div>
+<div style="display:none"  class="free-form-component section">
+<style>
+  section.live-collage::after {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    background: linear-gradient(to top, black, transparent);
+    width: 100%;
+    height: 30%;
+}
+
+
+    .live-collage {
+        margin-top: -12%;
+        padding: 0;
+        background: #000;
+    }
+    .live-collage .bg-cover {
+        position: relative;
+    }
+    .collage-left,
+    .collage-right {
+        width: 100%;
+        position: relative;
+    }
+    .collage-left-split,
+    .collage-right-split {
+        display: flex;
+    }
+    .collage-left-wrapper,
+    .collage-right-wrapper {
+        width: 100%;
+    }
+    .collage-left-border,
+    .collage-right-border {
+        width: 150px;
+    }
+    .collage-right-wrapper .scribble {
+        position: absolute;
+        top: -120px;
+        z-index: 1;
+        right: 250px;
+        width: 150px;
+    }
+    .collage-right-border {
+        width: 150px;
+    }
+    .collage-half {
+        display: flex;
+    }
+    .collage-bottom {
+        position: relative;
+    }
+    .collage-bottom .bg-yellow {
+        width: 50%; 
+        height: 150px;
+    }
+    .collage-bottom .scribble {
+        position: absolute; 
+        z-index: 1; 
+        top: -80px; 
+        left: 10%;
+    }
+    .bg-cover.experience { 
+        right: unset; 
+       /* background-image: url(https://www.pluralsight.com/content/dam/pluralsight2/events/2019/live/recap/recap-col-3.jpg); */
+        width: 100%; 
+        left: 0; 
+        bottom: unset; 
+        height: 20vw; 
+        margin-right: auto; 
+        top: 0;
+    }
+    .bg-cover.etc1 {
+       /* background-image: url(https://www.pluralsight.com/content/dam/pluralsight2/events/2019/live/recap/recap-col-4.jpg); */
+        height: 32vw;
+    }
+    .bg-cover.etc2 {
+       /* background-image: url(https://www.pluralsight.com/content/dam/pluralsight2/events/2019/live/recap/recap-col-5.jpg);*/ 
+        height: 20vw;
+        width: 25vw;
+        margin-left: auto;
+    }
+
+
+
+    .bg-cover.etc3 {
+        right: unset; 
+       /* background-image: url(https://www.pluralsight.com/content/dam/pluralsight2/events/2019/live/recap/recap-col-6.jpg); */
+        width: 50%; 
+        top: unset; 
+        left: unset; 
+        bottom: unset; 
+        height: 20vw; 
+    }
+    .bg-cover.experience2 {
+        right: unset; 
+       /* background-image: url(https://www.pluralsight.com/content/dam/pluralsight2/events/2019/live/recap/recap-col-7.jpg); */
+        width: 50%; 
+        top: unset; 
+        left: unset; 
+        bottom: unset; 
+        height: 20vw; 
+    }
+    .bg-cover.ctf-award {
+     /*   background-image: url(https://www.pluralsight.com/content/dam/pluralsight2/events/2019/live/inspiration-ctf.jpg); */
+        height: 25vw;
+    }    
+    @media only screen and (max-width: 1024px) {
+        .live-collage {
+            margin-top: 0; 
+            display: flex; 
+            flex-direction: column;
+        }
+        .collage-left {
+            margin-bottom: 150px;
+        }
+        .collage-left .bg-cover {
+            height: 50vw;
+            width: 100%;
+        }
+        .collage-left-border {
+            order: 1;
+        }
+        .collage-left-wrapper {
+            order: 2;
+        }
+        .collage-right .bg-cover,
+        .collage-bottom .bg-cover {
+            height: 40vw;
+        }
+        .collage-left-border,
+        .collage-right-border {
+            width: 100px;
+        }
+        .collage-right-wrapper .scribble {
+            right: unset;
+            left: 10%;
+        }
+        .collage-bottom .bg-yellow {
+            height: 100px;
+        }
+        .collage-bottom .scribble {
+            width: 280px;
+        }
+    }
+    @media only screen and (min-width: 1025px) {
+        .collage-right {
+            position: absolute;
+            right: 0;
+            top: 20vw;
+            width: 60%;
+            z-index: 1;
+        } 
+        .collage-half {
+            display: flex;
+            width: 85%;
+            margin-left: auto;
+        }
+        .collage-left {
+            width: 60%;
+        }
+        .collage-left-wrapper {
+            width: 50%;
+        }
+        .collage-left-border {
+            width: 50%;
+        }
+        .collage-bottom {
+            width: 60%;
+        }
+        .collage-spacer {
+            width: 50%;
+            height: 500px;
+            margin-left: auto;
+        }
+    }
+
+    .sponsors-wrapper {
+       width: 40%;
+       padding: 60px;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+    }
+    .sponsor-logos {
+        margin-bottom: 30px;
+    }
+    .sponsor-logos img {
+        margin: 20px;
+        object-fit: contain;
+    }
+   @media only screen and (max-width: 1024px) {
+      .sponsors-wrapper { 
+         width: 100%;
+      }
+   }
+</style>
+<section class="live-collage">
+<div class="collage-left">
+<div class="collage-left-split">
+<div class="collage-left-wrapper">
+<div class="bg-cover etc1 aos-init aos-animate" data-aos="fade-right" data-aos-duration="400"></div>
+<div class="bg-cover grayscale etc2 aos-init aos-animate" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100"></div>
+</div>
+<div class="collage-left-border bg-blue"></div>
+</div>
+</div>
+<div class="collage-right">
+<div class="collage-right-split">
+<div class="collage-right-wrapper">
+<img class="scribble" src="./index_files/experience-arrow.png" alt="Experience">
+<div class="bg-cover experience aos-init aos-animate" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300"></div>
+<div class="collage-half">
+<div class="bg-cover etc3 aos-init aos-animate" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300"></div>
+<div class="bg-cover experience2 aos-init aos-animate" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500"></div>
+</div>
+</div>
+<div class="collage-right-border bg-green"></div>
+</div>
+</div>
+<div style="display: flex;">
+<div class="collage-bottom">
+<div class="collage-spacer bg-blue"></div>
+</div>
+</div>
+</section>
+</div>
+<div class="animation-wrapper section">
+<div class="animation-wrapper-container  animation-unique-VoixtiLL" data-rellax-speed="0">
+<div data-aos="fade" data-aos-duration="1000" data-aos-delay="100" class="aos-init aos-animate">
+<div class="main clearfix">
+<div class="clearfix"><div class="generic-block section">
+<div id="block_recap_sponsor_" class="hidden"></div>
+<div class="generic-block-wrapper block block--black block--left generic-block--auto padding-top-hundred-fifty padding-bottom-hundred-fifty block_recap_sponsor clearfix" style="background-image: url(&#39;net.jpg&#39;);background-position:center left;background-size:cover;background-repeat:no-repeat; ">
+<div class="main clearfix">
+<div class="content clearfix"><div class="column-control section">
+<div>
+<div class="container column-control-container ">
+<div class="row large     padding-top-twenty padding-bottom-twenty column-control--super-wide">
+<div class="large-8 columns customPadding" style="padding-left: 50px; "><div class="animation-wrapper section">
+<div class="animation-wrapper-container  animation-unique-qnoJaamZ" data-rellax-speed="0">
+<div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" class="aos-init aos-animate">
+<div class="main clearfix">
+<div class="clearfix"><div class="title2 section">
+<div data-emptytext="Title">
+<h4 class=" title-font-tungsten mobile-font-size-4 tablet-font-size-3 desk-font-size-3    title--heavier disableBottomMargin">
+ON 3rd March 2020</h4>
+</div></div>
+<div class="text-4 text section remove-bottom-margin">
+<div class="cmp-text">
+<p class="remove-bottom-margin"><span class="tc-white"><span class="fs--normal"><span class="remove-bottom-margin">Mount Zion College of Engineering and Technology</span></span></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="spacer section">
+<div class="spacer  " style="height:30px"></div>
+</div>
+<div class="animation-wrapper section">
+<div class="animation-wrapper-container  animation-unique-HKAeORaa" data-rellax-speed="0">
+<div data-aos="fade" data-aos-duration="1000" data-aos-delay="400" class="aos-init aos-animate">
+<div class="main clearfix">
+<div class="clearfix"><div class="ps-button section">
+<div data-emptytext="Button">
+<div>
+<a href="#" target="_self" style=" min-width:250px;" class="button   11  " data-aa-title="footer-banner-registration">
+REGISTER
+</a>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="large-4 columns customPadding" style=" padding-right: 50px;">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="free-form-component section">
+<script type="text/javascript">
+  /*
+	jQuery(document).ready(function() {
+		var _h = Math.round((jQuery(window).height() / 3) * 2);
+		jQuery(document).on({
+			scroll: function() {
+				var _s = jQuery(window).scrollTop() + _h;
+				jQuery('.gif-animate').each(function() {
+					var _t = Math.round(jQuery(this).offset().top);
+					var _gif = jQuery(this).attr('src', jQuery(this).attr('src'));
+					if (_t < _s) {
+							jQuery(this).find('img').each(function() {
+								_gif.attr('src', _gif.attr('src'));
+							});
+					}
+				});
+			}
+		});
+	}); */
+</script></div>
+</div>
+</div>
+
+<!-- <div id="ps_pro_qty_modal">
+<div class="column-control section">
+<div class="container column-control-container ">
+<div class="row column-control--wide">
+<div class="large-5 columns column_qty large-push-7">
+<h3>Ready to skill up<br>your entire team?</h3>
+<div class="qty-selector">
+<div class="qty-down"><i class="icons" icon="down-arrow"></i></div>
+<div class="qty-display">
+<div class="qty-display-number">10</div>
+<div class="qty-display-label">Licenses</div>
+</div>
+<div class="qty-up"><i class="icons" icon="up-arrow"></i></div>
+</div>
+<div class="qty-sales-message hidden">Need more licenses? <a href="https://www.pluralsight.com/product/contact-sales">Contact sales</a>.</div>
+<a class="button button--gradient button--small biz_qty_checkout pilot-hide" data-aa-title="pro-qty-modal-signup" href="https://www.pluralsight.com/buy?requestId=da3a867d-b06e-4762-80a8-3671be1e1af3&amp;priceOptionId=f8c2aa27-af04-4ddc-aef8-b12a02a9968e&amp;legacyTrackingId=PROFESSIONAL-SG&amp;time=1582363341789&amp;quantity=10" data-product-sku="PROFESSIONAL-SG">Continue to checkout</a>
+<a class="button button--gradient button--small biz_qty_checkout pilot-show" data-aa-title="pro-qty-modal-trial" href="https://www.pluralsight.com/buy?requestId=da3a867d-b06e-4762-80a8-3671be1e1af3&amp;priceOptionId=2b5be31d-9b12-421b-858b-e532fb857a2d&amp;legacyTrackingId=PROFESSIONAL-SG-PILOT&amp;time=1582363341790&amp;quantity=10" data-product-sku="PROFESSIONAL-SG-PILOT">Continue to checkout</a>
+<div class="ps_pro_qty_modal-cancel">Cancel</div>
+</div>
+<div class="large-7 columns column_feature large-pull-5">
+<h3 class="pilot-hide">With your Pluralsight plan, you can:</h3>
+<h3 class="pilot-show">With your 14-day pilot, you can:</h3>
+<ul>
+<li class="pilot-hide">Access thousands of videos to develop critical skills</li>
+<li class="pilot-show">Give up to 10 users access to thousands of video courses</li>
+<li>Practice and apply skills with interactive courses and projects</li>
+<li>See skills, usage, and trend data for your teams</li>
+<li>Prepare for certifications with industry-leading practice exams</li>
+<li>Measure proficiency across skills and roles</li>
+<li>Align learning to your goals with paths and channels</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div> -->
+<section class="live-footer">
+<a href="https://github.com/naveenmicheal" class="ps-logo" target="_blank">NAVEEN MICHEAL</a>
+
+<ul class="inline-list">
+<li><a href="https://www.pluralsight.com/live/authors" data-aa-title="nav-authors">MZCET-CSE</a></li>
+<li><a href="https://www.pluralsight.com/live/why" data-aa-title="nav-attend">Final Year</a></li>
+</ul>
+<ul>
+<li><a href="https://www.facebook.com/pluralsight" data-aa-title="footer-social-facebook">DISCORD</a></li>
+<li><a href="https://twitter.com/pluralsight" data-aa-title="footer-social-twitter">Twitter</a></li>
+<li><a href="https://www.instagram.com/pluralsight/" data-aa-title="footer-social-instagram">Instagram</a></li>
+</ul>
+</section>
+<script type="text/javascript" src="./index_files/livepage.min.91ce042107a6d563c7dd30d059c9f38d.js"></script>
+<script>
+jQuery(".text.section, .text-2.section, .text-3.section, .text-4.section, .title.section, .title2.section").each(function(key,item) {
+    if (item.innerHTML.indexOf("\u2028") > -1){
+        item.innerHTML = item.innerHTML.replace(/\u2028/g, ' ');
+    }
+});
+</script>
+<script>
+function isElementInViewport (el) {
+  var rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && /*or $(window).height() */
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
+  );
+}
+function loadLazysrc(item){
+  var $item = jQuery(item);
+  if ($item.hasClass("lazy-bg")){
+    $item.removeClass("lazy-bg");
+  } else {
+    var src = $item.attr('data-lazysrc');
+    $item.attr('src',src);
+    $item.removeAttr('data-lazysrc');
+  }
+}
+
+//lazy load images above the fold
+jQuery('img[data-lazysrc],.lazy-bg').each(function(index,item){
+  if ( jQuery(item).is(":visible") && isElementInViewport(item) ){
+    loadLazysrc(item);
+  } else if (document.URL.indexOf("lazyLoadOff=true") > -1){
+    loadLazysrc(item);
+  }
+});
+
+//lazy load images below the fold. Keep function available for promo service or others that may need it.
+window.addEventListener('load', function(){
+  jQuery('img[data-lazysrc],.lazy-bg').each(function(index,item){
+    loadLazysrc(item);
+  });
+});
+</script>
+<script type="text/javascript" src="./index_files/uber.min.00e51f7357edfceb667d95b554dc85e9.js" defer=""></script>
+</div>
+</div>
+
+<script type="text/javascript">
+/* function dtm_track
+ *   @param type -- Required. The type of call. Defaults to "view".
+ *   @param obj -- Optional. An object of data elements for mapping to a tag.
+ *
+ *   @description This function is used for tracking some event dynamically.
+ *     This is used in conjunction with a special process in direct call
+ *     rules and js object data elements.
+ *
+ *     -- The <type> param --
+ *     All direct call rules will have the string in the format of <type>.
+ *     So, you might have "view". In SiteCatalyst, for example, you would
+ *     put this string and then init an s.t() call because it is a "view".
+ *
+ *     -- The <obj> param --
+ *     All data elements passed into the <obj> param of this function should
+ *     be created in dtm as js objects named "dtm_layer.<element_name>".
+ *     Each possible item in the object should be created as a data element
+ *     and then mapped in the associated direct call rule.
+ *
+ *     -- The <lookAtExisting> param --
+ *
+ *     This is an optional flag that can be enabled by marking it as "true"
+ *     without quotes. If enabled, this will take the existing page data layer
+ *     and merge it into the given obj, keeping the obj variables as higher
+ *     priority. The data layer will then reset back to normal after the tracking
+ *     call has been made.
+ *     
+ *     -- Debugging -- 
+ *     If you'd like to view the output of these calls as they happen, enable
+ *     the debug cookie in the console with the following:
+ *         document.cookie="dtm_debug=true";
+ *
+ *     -- Additional Info --
+ *     This code also will initialize a page with an empty dtm_layer object if
+ *     one isn't defined already. In addition, a global cloning function is
+ *     created called "dtm_clone". It will clone the following js types: string,
+ *     object, boolean, array, date, number, function. It will NOT copy anything
+ *     that has prototype methods defined. It will also not copy anything that
+ *     is cylic or recursive in nature. If done, a stack overflow error will
+ *     result. This method can be called on any variable like so:
+ *         myClonedVar = dtm_clone(myOldVar);
+ */
+
+function dtm_clone(obj) {
+    if (null == obj || "object" != typeof obj) return obj;
+    var copy = obj.constructor();
+    for (var attr in obj) {
+        if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
+    }
+    return copy;
+}
+ 
+window.dtm_layer = window.dtm_layer || {};
+window.dtm_track = function(type,obj,lookAtExisting) {
+  try {
+    var hasTracked = "";
+    if (typeof _satellite == "undefined") hasTracked = "NOT ";
+    if (typeof type == "undefined" || type == null || !type) type = "view";
+  
+    var temp = window.dtm_clone(window.dtm_layer);
+    window.dtm_layer = obj || {};
+
+    if(lookAtExisting) {
+      for(var key in temp) {
+        if(!dtm_layer[key])
+          dtm_layer[key] = temp[key];
+      }
+    }
+  
+    if (typeof console != "undefined" && console.log
+        && typeof _satellite.readCookie('dtm_debug') != "undefined"
+        && (_satellite.readCookie('dtm_debug') == "true"
+            || _satellite.readCookie('dtm_debug') == true)) {
+      console.log("dtm " + hasTracked + "tracked '" + type + "'", obj);
+    }
+  
+    if (hasTracked != "NOT ")
+      _satellite.track(type);
+  
+    setTimeout(function(){
+      window.dtm_layer = window.dtm_clone(temp);
+      delete temp;
+    },300);
+  } catch (e) {
+    if(typeof console != "undefined" && console.log)
+        console.log("dtm_track error. Message: ",e.message," Passed obj: ",obj);
+  }
+  return true;
+};
+</script><script type="text/javascript">
+  //tracking function for direct call rules
+window.scTrack = function(type, obj){
+  if(!obj) obj={};
+  _satellite.notify('scTrack: '+JSON.stringify(obj),1);
+	if(type === 'link') dtm_track('aa_link',obj);
+  if(type === 'view') dtm_track('aa_view',obj);
+};
+</script><script>
+//Save UTM cookies
+if (document.URL.indexOf("utm_campaign=") > -1){
+    var d = new Date();
+    d.setTime(d.getTime() + (60*60*1000));
+    document.cookie = "utm=" + document.URL.split("?")[1] + "; expires=" + d.toUTCString() + "; path=/";
+}
+
+//profile scores JS 
+function runProfile(){
+  //set profile scores
+  var profileScores;
+  var viewType;
+  var behaviorWeight;
+
+  if (document.cookie.indexOf("profileScores=") > -1){
+    profileScores = document.cookie.split("profileScores=")[1].split(";")[0];
+    if (profileScores.indexOf("NaN") > -1){
+      profileScores = [0,0,0,0,0,0,0,0];
+    } else if (profileScores.indexOf(",") > -1){
+      profileScores = profileScores.split(","); //leagacy, broken cookie
+    } else {
+      profileScores = profileScores.split("|");
+    }
+  } else {
+    profileScores = [0,0,0,0,0,0,0,0];
+  }
+
+  function incrementScore(i,n){
+    profileScores[i]=1*profileScores[i]+n;
+  }
+
+  if (document.URL.indexOf("/blog/") > -1 || document.URL.indexOf("/browse/") > -1){
+    viewType = window.location.pathname;
+    behaviorWeight = 1;
+  } else if (document.URL.indexOf("/courses/") > -1){
+    var rolesTag = document.head.querySelector("[name=roles]");
+    if (rolesTag){
+      viewType = rolesTag.content;
+      behaviorWeight = 2;
+    }
+  }
+
+  if (viewType){
+    if (viewType.indexOf("software-development") > -1){ incrementScore(7, behaviorWeight); } 
+    if (viewType.indexOf("it-ops") > -1) { incrementScore(6, behaviorWeight); } 
+    if (viewType.indexOf("creative-professional") > -1) { incrementScore(5, behaviorWeight); } 
+    if (viewType.indexOf("data-professional") > -1) { incrementScore(4, behaviorWeight); } 
+    if (viewType.indexOf("architecture-construction") > -1) { incrementScore(3, behaviorWeight); } 
+    if (viewType.indexOf("manufacturing-design") > -1) { incrementScore(2, behaviorWeight); } 
+    if (viewType.indexOf("business-professional") > -1) { incrementScore(1, behaviorWeight); } 
+    if (viewType.indexOf("security") > -1) { incrementScore(0, behaviorWeight); }
+  }
+
+    var d = new Date();
+    d.setTime(d.getTime() + (60*24*60*60*1000));
+    document.cookie = "profileScores=" + profileScores.join("|") + "; expires=" + d.toUTCString() + "; path=/; domain=pluralsight.com";
+
+
+  //set interest variable on window
+  var highestScore = Math.max.apply( Math, profileScores );
+  var profileScoreIndex = profileScores.indexOf("" + highestScore);
+
+  if (highestScore < 1.1){ window.profiledInterest = ""; } 
+  else if (profileScoreIndex == 7){ window.profiledInterest = "software-development"; } 
+  else if (profileScoreIndex == 6){ window.profiledInterest = "it-ops"; } 
+  else if (profileScoreIndex == 5){ window.profiledInterest = "creative-professional"; } 
+  else if (profileScoreIndex == 4){ window.profiledInterest = "data-professional"; } 
+  else if (profileScoreIndex == 3){ window.profiledInterest = "architecture-construction"; } 
+  else if (profileScoreIndex == 2){ window.profiledInterest = "manufacturing-design"; } 
+  else if (profileScoreIndex == 1){ window.profiledInterest = "business-professional"; } 
+  else if (profileScoreIndex == 0){ window.profiledInterest = "security-professional"; }
+  else { window.profiledInterest = ""; }  
+window.profileScores = profileScores;
+}
+runProfile();
+</script><script>
+//FIRE PAGE VIEW
+//slight delay to allow the adobe tool to init plugins fully
+setTimeout(function(){
+  _satellite.track('aa_view');
+},300);
+
+
+
+//TRACKING BINDINGS
+jQuery(document).ready(function(){
+  //CTAs
+  jQuery("[data-aa-title]").on('click contextmenu',function(event){
+    var ctaTitleFormatted = window.location.protocol + "//" + window.location.hostname + "" + window.location.pathname + " | " + jQuery(this).data('aa-title');
+    var thisLink = jQuery(this).attr("href");
+    if (jQuery(this).data('aa-title').indexOf("pricingblock") > -1){
+      scTrack('link', {
+        eventName: 'Pricing Block CTA',
+        pricingCtaTitle: ctaTitleFormatted
+      });
+    } else if (jQuery(this).closest('.link.section').length > 0){
+      scTrack('link', {
+        eventName: 'CTA Link Click',
+        ctaTitle: ctaTitleFormatted
+      });
+    } else {
+      scTrack('link', {
+        eventName: 'CTA Click',
+        ctaTitle: ctaTitleFormatted
+      });
+    }
+    if (!event.ctrlKey
+      && !event.metaKey
+      && event.type != "contextmenu"
+      && !thisLink.startsWith("#")
+      && jQuery(this).attr('target') != '_blank'
+      && jQuery(this).attr('class')
+      && jQuery(this).attr('class').indexOf('fancybox') == -1){
+      event.preventDefault();
+      setTimeout(function(){
+        window.location.href = thisLink;
+      },500);
+    }
+  });
+
+  //hub recommended tiles
+  jQuery(".recommended-tile a").on('click contextmenu',function(event){
+    var thisLink = jQuery(this).attr("href");
+    scTrack('link', {
+      eventName: 'Recommended Tile Click',
+    });
+    if (!event.ctrlKey
+      && !event.metaKey
+      && event.type != "contextmenu"
+      && jQuery(this).attr('target') != '_blank'){
+      event.preventDefault();
+      setTimeout(function(){
+        window.location.href = thisLink;
+      },500);
+    }
+  });
+
+  //Header link
+  jQuery('header a, nav.ps-nav a').on('click contextmenu',function(event){
+    var thisLink = jQuery(this).attr("href");
+    scTrack('link', {
+      eventName: 'Header/Footer Click',
+      navLinkedPage: "header:" + (jQuery(this).attr('data-aa-header-title') ? jQuery(this).attr('data-aa-header-title') : jQuery(this).attr('href'))
+    });
+    if (!event.ctrlKey
+      && !event.metaKey
+      && event.type != "contextmenu"
+      && !thisLink.startsWith("#")
+      && jQuery(this).attr('target') != '_blank'
+      && jQuery(this).attr('class')
+      && jQuery(this).attr('class').indexOf('fancybox') == -1
+      && jQuery(this).attr('class').indexOf('header_menu') == -1){
+      event.preventDefault();
+      setTimeout(function(){
+        window.location.href = thisLink;
+      },500);
+    }
+  });
+
+  //Footer link
+  jQuery('#ftr a').on('click contextmenu',function(event){
+    var thisLink = jQuery(this).attr("href");
+    scTrack('link', {
+      eventName: 'Header/Footer Click',
+      navLinkedPage: "footer:" + jQuery(this).attr('href')
+    });
+    if (!event.ctrlKey
+      && !event.metaKey
+      && event.type != "contextmenu"
+      && jQuery(this).attr('target') != '_blank'
+      && jQuery(this).attr('class').indexOf('fancybox') == -1){
+      event.preventDefault();
+      setTimeout(function(){
+        window.location.href = thisLink;
+      },500);
+    }
+  });
+
+
+
+
+
+
+
+
+
+  //SEARCH BINDINGS
+  //search executed from header
+  if (jQuery('.header_search form').length){
+      jQuery('.header_search form').on('keypress',function(event){
+          if (event.which == '13'){
+            var form = this;
+            scTrack('link', {
+              eventName: 'Search Submit',
+              searchTerm: jQuery('#header_searchForm .header_search--input').val(),
+              searchPageName: document.URL.split('?')[0],
+              searchOriginAndTerm: 'Search: ' + jQuery('#header_searchForm .header_search--input').val() + '',
+              fireAnyPageSearchInitiated: true
+            });
+          }
+      });
+  }
+
+  //search executed from search box
+  if (jQuery('#search-field form').length){
+      jQuery('#search-field form').on('submit',function(event){
+          scTrack('link', {
+            eventName: 'Search Submit',
+            searchTerm: event.target[1].value,
+            searchPageName: document.URL.split('?')[0],
+            searchOriginAndTerm: 'Search: ' + event.target[1].value + '',
+            fireAnyPageSearchInitiated: true
+          });
+      });
+  }
+
+  //click cludo search item
+  jQuery(document).on('click contextmenu','#search-results #search-results-target a.cludo-result',function(event){
+    var thisLink = jQuery(this).attr("href");
+    doClickResult(thisLink,jQuery(this).text());
+    if (!window.searchTrackedOnce){
+      var isSearchPage = (jQuery('body.search-template').length > 0);
+      scTrack('link', {
+        eventName: 'Search Result Clicked',
+        searchResultURL: thisLink,
+        fireSearchPageResultClick: isSearchPage
+      });
+
+      //only prevent default if they're not already opening in a tab.
+      if (!event.ctrlKey
+        && !event.metaKey
+        && event.type != "contextmenu"
+        && jQuery(this).attr('target') != '_blank'){
+        event.preventDefault();
+        setTimeout( function () { 
+            window.location = thisLink;
+        }, 500);
+      } 
+      //make sure we only track their first click of interest
+      window.searchTrackedOnce = true;
+    }
+  });
+
+  //Facet filter
+  jQuery(document).on('click','.search-filter-option-text',function(){
+    scTrack('link', {
+      eventName: 'Search Results Filter Click',
+      filterLocation: 'left',
+      filterType: jQuery(this).parents('.search-filter-section').find('.search-filter-header').text().trim(),
+      filterName: jQuery(this).text().trim()
+    });
+  });
+
+  //click tab filter on www search
+  jQuery(document).on('click','#search-filter-tabs .tab-title',function(){
+    scTrack('link', {
+      eventName: 'Search Results Filter Click',
+      filterLocation: 'top',
+      filterType: 'Content Type',
+      filterName: jQuery(this).find('a').text().trim()
+    });
+  });
+
+  // view all courses (www)
+  jQuery(document).on('click','.view-all-link[data-tab-param="course"]',function(){
+    scTrack('link', {
+      eventName: 'View All Courses Click(WWW)'
+    });
+  });
+});
+</script><script>
+//linkedIn loader
+window.fireLinkedInMIND = function(){ jQuery('head').append("<img src=\"https://dc.ads.linkedin.com/collect/?fmt=gif&url=monthlyindividualpluralsight.com/button&pid=17937\" width=\"1\" height=\"1\" border=\"0\" alt=\"\" />");}
+window.fireLinkedInYIND = function(){ jQuery('head').append("<img src=\"https://dc.ads.linkedin.com/collect/?fmt=gif&url=yearlyindividualpluralsight.com/button&pid=17937\" width=\"1\" height=\"1\" border=\"0\" alt=\"\" />");}
+window.fireLinkedInFT = function(){ jQuery('head').append("<img src=\"https://dc.ads.linkedin.com/collect/?fmt=gif&url=trialpluralsight.com/button&pid=17937\" width=\"1\" height=\"1\" border=\"0\" alt=\"\" />");}
+window.fireLinkedInENT = function(){ jQuery('head').append("<img src=\"https://dc.ads.linkedin.com/collect/?fmt=gif&url=smbdirectpurchasepluralsight.com/button&pid=17937\" width=\"1\" height=\"1\" border=\"0\" alt=\"\" />");}
+
+// Share-a-Sale Pixel Loader 
+window.fireShareASale = function(amount, id, sku){jQuery('head').append("<img src=\"https://shareasale.com/sale.cfm?amount=" + amount + "&tracking=" + id + "&transtype=sale&merchantID=53701&skulist=" + sku + "\" width=\"1\" height=\"1\">");}
+
+</script><!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<style type="text/css">
+/* Qualtrics survey load screen to darker color */
+.QSIEmbeddedTarget > div:first-of-type{
+    background: #222222 !important;
+    border:none !important;
+    height:550px !important;
+}
+.QSIEmbeddedTarget > div:first-of-type > div:first-of-type{
+    height:550px !important;
+}
+@media screen and (max-width:790px){
+    .QSIEmbeddedTarget > div:first-of-type{
+        height:480px !important;
+    }
+    .QSIEmbeddedTarget > div:first-of-type > div:first-of-type{
+        height:480px !important;
+    }
+}
+@media screen and (max-width:600px){
+  .QSIFeedBackLink{ display:none !important;}
+}
+  /* hide entirely for Target test */
+.QSIFeedBackLink{ display:none !important;}
+</style>
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g+ "&t=" + (new Date()).getTime();document.body&&document.body.appendChild(a)}};
+this.start=function(){var a=this;window.addEventListener?window.addEventListener("load",function(){a.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){a.go()})}};
+try{(new g(100,"r","QSI_S_ZN_6QzQ6cAauCudEsR","https://zn6qzq6caaucudesr-pluralsight.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_ZID=ZN_6QzQ6cAauCudEsR")).start()}catch(i){}})();
+</script><div id="ZN_6QzQ6cAauCudEsR"></div>
+<!--END WEBSITE FEEDBACK SNIPPET--><script type="text/javascript" src="./index_files/saved_resource(1)"></script></body></html>
+
+
+<style type="text/css">
+    h2.title--black.title-font-tungsten.title--center.title--heavier.disableBottomMargin{
+        color: white
+    }
+</style>

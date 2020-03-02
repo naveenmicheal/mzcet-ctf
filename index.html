@@ -95,9 +95,7 @@ function setSelectedInterest(e){var t=new Date;t.setTime(t.getTime()+6048e5),doc
 <div id="site-promo-content"></div>
 <div class="promo-close-button">×</div>
 </div>
-<script>
-var noDBpromo=!0;function showPromoIfPermitted(){(-1==document.cookie.indexOf("site-promo-closed=1")||window.blockPromoHide)&&(jQuery("#site-promo .promo-wrapper-contents").length>-1&&""!=jQuery("#site-promo .promo-wrapper-contents").html().trim()&&jQuery("#site-promo").show(),jQuery("#site-promo .promo-close-button").click(function(){var o=new Date;o.setTime(o.getTime()+432e5),document.cookie="site-promo-closed=1; expires="+o.toUTCString()+"; path=/",jQuery("#site-promo").slideUp(300)}),window.promoShown=!0,window.setStickies&&window.setStickies(),dtmEventTrigger("ps.promoShown",{}),jQuery(document).ready(function(){setTextHighlights()}))}function promoCheck(){if(window.promoCheckRan=!0,document.URL.indexOf("b2b=true")>-1||document.URL.indexOf("nopromos=true")>-1){var o=new Date;o.setTime(o.getTime()+6048e5),document.cookie="nopromos=1; expires="+o.toUTCString()+"; path=/; domain=pluralsight.com"}if(-1==document.cookie.indexOf("nopromos=1")&&("www.pluralsight.com"==window.location.host||"www-stage.pluralsight.com"==window.location.host||"www-stage2.pluralsight.com"==window.location.host||"learn.pluralsight.com"==window.location.host||"learn-stage.pluralsight.com"==window.location.host||"www.javascript.com"==window.location.host||"www-stage.javascript.com"==window.location.host)){var n=!1;window.location.host.indexOf("-stage.")>-1&&(n=!0);var e="none",t="none",a=(new Date).valueOf();!noDBpromo&&dnbData.companyName&&(e=dnbData.companyName,t=dnbData.industryNaics),jQuery.ajax({url:"/discounts/api/global-promo?company="+encodeURIComponent(e)+"&audience="+encodeURIComponent(t)+"&time="+a,headers:{authorization:"aem"}}).done(function(o){(o.campaignId||window.forceCampaignCode)&&(window.globalPromos=o.promos,window.campaignCode=window.forceCampaignCode||o.campaignId,jQuery.ajax({url:"/content/pluralsight/en/global/promos/"+campaignCode+".html?time="+a}).done(function(o){var e=function(o){return"learn.pluralsight.com"!=window.location.host&&"learn-stage.pluralsight.com"!=window.location.host&&"www.javascript.com"!=window.location.host&&"www-stage.javascript.com"!=window.location.host||(o=0==o.indexOf("/jscom")&&window.location.hostname.indexOf("javascript.com")>-1?o.substring(6,o.length):0!=o.indexOf("/landing-pages")||"learn.pluralsight.com"!=window.location.hostname&&"learn-stage.pluralsight.com"!=window.location.hostname?"////":o.substring(14,o.length)),o},t=jQuery(o).find(".promo-block-filters").data("blockedpaths"),a=t?t.split(","):[],r=!1;for(i in a){var c=a[i].trim();0==c.indexOf("=")?(c=c.substring(1,c.length),window.location.pathname==e(c)&&(r=!0,n&&console.log("Promo banners blocked on page."))):0==window.location.pathname.indexOf(e(c))&&(r=!0,n&&console.log("Promo banners blocked on page."))}if(!r){var m=jQuery(o).find(".promo-wrapper-filter"),s=!1;jQuery.each(m,function(o,n){var t=jQuery(n).data("allowedpaths"),a=t?t.split(","):[],r=!1;for(i in a){var c=a[i].trim();0==c.indexOf("=")?(c=c.substring(1,c.length),window.location.pathname==e(c)&&(r=!0)):0==window.location.pathname.indexOf(e(c))&&(r=!0)}if(r)return jQuery("#site-promo-content").html(n),jQuery("#site-promo-content img[data-lazysrc], #site-promo-content .lazy-bg").each(function(o,n){"undefined"!=typeof loadLazysrc&&loadLazysrc(n)}),window.blockPromoHide=jQuery(n).data("blockhiding"),showPromoIfPermitted(),s=!0,!1}),s||n&&console.log("No allowed banner found on promo config page.")}}).fail(function(){n&&console.log("No promo page found for campaign code "+campaignCode)}),window.promoTriggered=!0,dtmEventTrigger("ps.promoTriggered",{})),window.promoCheckCompleted=!0})}}(window.dnbData.status||noDBpromo)&&promoCheck(),setTimeout(function(){window.promoCheckRan||window.promoCheck()},3e3);
-</script>
+
 <div>
 <script type="text/javascript" src="./index_files/search-script.min.js"></script>
 <!-- <script>
@@ -416,8 +414,8 @@ STRENGTHEN YOUR INFORMATION SECURITY SKILLS
 <div class="ps-button section">
 <div data-emptytext="Button" class="psbutton--right">
 <div>
-<a href="#" target="_self" class="button  button--black 12  " data-aa-title="pink-banner-registration">
-get my pass
+<a href="unlink.html" target="_blank" class="button  button--black 12  " data-aa-title="pink-banner-registration">
+Challenges
 </a>
 </div>
 </div></div>
@@ -849,6 +847,9 @@ OS and<br>Analysis
             min-height: 700px; 
         }
     }
+    .column-control .column-control-container>.row>.columns[class*=large-]{
+        padding: 0
+    }
 </style>
 
 <section style="display:none" class="live-relive">
@@ -1223,11 +1224,11 @@ REGISTER
 </div>
 </div> -->
 <section style="background-image: url(#);" class="live-footer">
-<a style="background-image: url(#);" href="https://github.com/naveenmicheal" class="ps-logo" target="_blank">NAVEEN MICHEAL</a>
+<a style="background-image: url(#);" href="https://github.com/naveenmicheal" class="ps-logo" target="_blank">TechQuest | 2020</a>
 
 <ul class="inline-list">
-<li><a href="#" data-aa-title="nav-authors">MZCET-CSE</a></li>
-<li><a href="#" data-aa-title="nav-attend">Final Year</a></li>
+<!-- <li><a href="#" data-aa-title="nav-authors">BY</a></li> -->
+<li><a href="#" data-aa-title="nav-attend">Naveen Micheal</a></li>
 </ul>
 <ul>
 <li><a href="#" data-aa-title="footer-social-facebook">DISCORD</a></li>

@@ -46,9 +46,9 @@
       </span>
 
          <div style="padding-top: 10px" class="center-align" id="open">
-        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
-         <i class="material-icons right">device_hub</i>
-       </button>
+        <a target="_blank" href="https://001-c-side-auth.now.sh/"><button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+          <i class="material-icons right">device_hub</i>
+        </button></a>
     </div>
 
 
@@ -65,8 +65,8 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">submit</i>
-
-          <input placeholder="Enter the flag" id="c1input" type="text" class="validate">
+          <p>Enter the Flag:</p>
+          <input id="c1input" type="text" class="validate">
           <button onclick="c_one()" class="btn red">Submit</button>
         </div>
  
@@ -77,7 +77,7 @@
 
     <script type="text/javascript">
       function c_one(){
-      let flag_hash = 'f97c5d29941bfb1b2fdab0874906ab82';
+      let flag_hash = '2b7b4ee754687b3eab5c226019af3884';
       let input = document.getElementById('c1input').value;
       let input_hash = md5(input)
       console.log(input)
@@ -114,9 +114,10 @@
       </span>
 
          <div style="padding-top: 10px" class="center-align" id="open">
+       <a target="_blank" href="https://i-agree-whatever.herokuapp.com/">
         <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
-         <i class="material-icons right">device_hub</i>
-       </button>
+          <i class="material-icons right">device_hub</i>
+        </button></a>
     </div>
 
 
@@ -133,8 +134,8 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">submit</i>
-
-          <input placeholder="Enter the flag" id="c2input" type="text" class="validate">
+          <p>Enter the Flag:</p>
+          <input  id="c2input" type="text" class="validate">
           <button onclick="c_two()" class="btn red">Submit</button>
         </div>
  
@@ -145,14 +146,14 @@
 
     <script type="text/javascript">
       function c_two(){
-      let flag_hash = 'f97c5d29941bfb1b2fdab0874906ab82';
+      let flag_hash = '73aedf13ca3fca9a07393ea6c51647fb';
       let input = document.getElementById('c2input').value;
       let input_hash = md5(input)
       console.log(input)
 
       if (input_hash == flag_hash){
         alertify
-      .alert("Flag Is Correct, Succesfully Completed Challenge 1. Update to nearby event Coordinators.", function(){
+      .alert("Flag Is Correct, Succesfully Completed Challenge 2. Update to nearby event Coordinators.", function(){
       alertify.message('DONE');
       });
       }
@@ -184,16 +185,16 @@
       </span>
 
          <div style="padding-top: 10px" class="center-align" id="open">
-        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
-         <i class="material-icons right">device_hub</i>
-       </button>
+       <a target="_blank" href="https://robots-know-whereitis.now.sh"><button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+        <i class="material-icons right">device_hub</i>
+      </button></a> 
     </div>
 
 
       <h3 style="font-size: 20px;">Resources</h3>
       <div class="collection">
-        <a target="_blank"  href="https://en.wikipedia.org/wiki/Robots_exclusion_standard" class="collection-item">Robots exclusion standard</a>
-        <a href="#!" class="collection-item">Why and How is a session is maintained?</a>
+        <a target="_blank"  href="https://developers.google.com/web/tools/chrome-devtools" class="collection-item">Robots exclusion standard</a>
+        <a href="#!" class="collection-item">Chrome Dev Tools</a>
       <!--   <a href="#!" class="collection-item">What is mean by Javascript</a>
         <a href="#!" class="collection-item">Chrome Developer tools</a> -->
       </div>
@@ -203,8 +204,8 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">submit</i>
-
-          <input placeholder="Enter the flag" id="c3input" type="text" class="validate">
+          <p>Enter the Flag:</p>
+          <input id="c3input" type="text" class="validate">
           <button onclick="c_three()" class="btn red">Submit</button>
         </div>
  
@@ -215,18 +216,19 @@
 
     <script type="text/javascript">
       function c_three(){
-      let flag_hash = 'f97c5d29941bfb1b2fdab0874906ab82';
+      let flag_hash = 'daebc8bbc4210530190ae7442964cfed';
       let input = document.getElementById('c3input').value;
       let input_hash = md5(input)
-      console.log(input)
+      console.log(`Input Value: ${input} input hash : ${input_hash}`)
 
       if (input_hash == flag_hash){
         alertify
-      .alert("Flag Is Correct, Succesfully Completed Challenge 1. Update to nearby event Coordinators.", function(){
+      .alert("Flag Is Correct, Succesfully Completed Challenge 3. Update to nearby event Coordinators.", function(){
       alertify.message('DONE');
       });
       }
       else{
+        console.log(input_hash)
          alertify
       .alert("Wrong Flag", function(){
       alertify.message('Retry');
@@ -253,9 +255,10 @@
       </span>
 
          <div style="padding-top: 10px" class="center-align" id="open">
-        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
-         <i class="material-icons right">device_hub</i>
-       </button>
+        <a target="_blank" href="https://i-love-googlebot.herokuapp.com/
+        "><button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+          <i class="material-icons right">device_hub</i>
+        </button></a> 
     </div>
 
 
@@ -272,8 +275,8 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">submit</i>
-
-          <input placeholder="Enter the flag" id="c5input" type="text" class="validate">
+          <p>Enter the Flag:</p>
+          <input id="c4input" type="text" class="validate">
           <button onclick="c_four()" class="btn red">Submit</button>
         </div>
  
@@ -284,8 +287,8 @@
 
     <script type="text/javascript">
       function c_four(){
-      let flag_hash = 'f97c5d29941bfb1b2fdab0874906ab82';
-      let input = document.getElementById('c5input').value;
+      let flag_hash = '693e399c53261ff7697bd9ae65831630';
+      let input = document.getElementById('c4input').value;
       let input_hash = md5(input)
       console.log(input)
 
@@ -315,7 +318,7 @@
         <span style="color:black;font-size: 25px; " class="badge #f368e0">50 Points</span>
       </div>
       <div class="collapsible-body"><span id="dis">
-         Enable Debugging in Production Is So Tempting,But Don't do that? Again I say Don't do It.Ok Whatever. Hint: The flag file located in the flask application root directory
+         Enable Debugging in Production Is So Tempting,But Don't do that? Again I say Don't do It.Ok Whatever. <br> <b>Hint: The flag file located in the flask application root directory</b> 
       </span>
 
          <div style="padding-top: 10px" class="center-align" id="open">
@@ -338,8 +341,8 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">submit</i>
-
-          <input placeholder="Enter the flag" id="c6input" type="text" class="validate">
+          <p>Enter the Flag</p>
+          <input id="c6input" type="text" class="validate">
           <button onclick="c_five()" class="btn red">Submit</button>
         </div>
  
@@ -395,13 +398,17 @@
       </div>
       <div class="collapsible-body"><span id="dis">
          Its is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher
-      </span>
+     <br>
+     <p style="text-align: center;" >Can you retrive the flag:[key]: <b>ROT B</b> </p>
+     <p style="text-align: center;" >flags always mzctf{something} format</p> 
+     <br>
+     <p  style="text-align: center; margin-top: 0px; color: #341f97;" >zmpgs{u3yy0-808-4Y1P3-u7h} </p></span>
 
-         <div style="padding-top: 10px" class="center-align" id="open">
+         <!-- <div style="padding-top: 10px" class="center-align" id="open">
         <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
          <i class="material-icons right">device_hub</i>
        </button>
-    </div>
+    </div> -->
 
 
       <h3 style="font-size: 20px;">Resources</h3>
@@ -417,9 +424,9 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">submit</i>
-
-          <input placeholder="Enter the flag" id="sixinput" type="text" class="validate">
-          <button onclick="c_six()" class="btn red">Submit</button>
+          <p>Enter the Flag: </p>
+          <input id="ceaserinput" type="text" class="validate">
+          <button onclick="ceaser()" class="btn red">Submit</button>
         </div>
  
       </div>
@@ -428,9 +435,9 @@
     </div>
 
     <script type="text/javascript">
-      function c_six(){
-      let flag_hash = 'f97c5d29941bfb1b2fdab0874906ab82';
-      let input = document.getElementById('sixinput').value;
+      function ceaser(){
+      let flag_hash = 'b76727ee4505c4ed1e9c3d3756fa232e';
+      let input = document.getElementById('ceaserinput').value;
       let input_hash = md5(input)
       console.log(input)
 
@@ -461,13 +468,16 @@
       </div>
       <div class="collapsible-body"><span id="dis">
          There is a Playfair cipher. decrypt the text, find the answer, submit the flag in the form of <b style="padding-left: 10px">mzctf{answer}</b>
-      </span>
+        <p>The Flag in mzctf{youranswer} format</p>
+        <p>---WILL--BE-UPDATED_SOON----</p>
+        </span>
 
+<!-- 
          <div style="padding-top: 10px" class="center-align" id="open">
         <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
          <i class="material-icons right">device_hub</i>
        </button>
-    </div>
+    </div> -->
 
 
       <h3 style="font-size: 20px;">Resources</h3>
@@ -484,8 +494,9 @@
         <div class="input-field col s12">
           <i class="material-icons prefix">submit</i>
 
-          <input placeholder="Enter the flag" id="seveninput" type="text" class="validate">
-          <button onclick="c_six()" class="btn red">Submit</button>
+          <input  id="playinput" type="text" class="validate">
+          <label for=""></label>
+          <button onclick="play()" class="btn red">Submit</button>
         </div>
  
       </div>
@@ -494,9 +505,9 @@
     </div>
 
     <script type="text/javascript">
-      function c_six(){
+      function play(){
       let flag_hash = 'f97c5d29941bfb1b2fdab0874906ab82';
-      let input = document.getElementById('seveninput').value;
+      let input = document.getElementById('playinput').value;
       let input_hash = md5(input)
       console.log(input)
 
@@ -542,7 +553,7 @@
       </span>
 
          <div style="padding-top: 10px" class="center-align" id="open">
-        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Download .pcap file
          <i class="material-icons right">device_hub</i>
        </button>
     </div>
@@ -561,9 +572,9 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">submit</i>
-
-          <input placeholder="Enter the flag" id="teninput" type="text" class="validate">
-          <button onclick="c_ten()" class="btn red">Submit</button>
+          <p>Enter the Flag:</p>
+          <input id="wire_in" type="text" class="validate">
+          <button onclick="c_wire()" class="btn red">Submit</button>
         </div>
  
       </div>
@@ -572,15 +583,83 @@
     </div>
 
     <script type="text/javascript">
-      function c_ten(){
-      let flag_hash = 'f97c5d29941bfb1b2fdab0874906ab82';
-      let input = document.getElementById('teninput').value;
+      function c_wire(){
+      let flag_hash = '1ec4b606d5e06b565a7fba61bc9b5182';
+      let input = document.getElementById('wire_in').value;
       let input_hash = md5(input)
       console.log(input)
 
       if (input_hash == flag_hash){
         alertify
       .alert("Flag Is Correct, Succesfully Completed Challenge 1. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
+      }
+      else{
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
+
+      }
+    
+    </script>
+   
+    </li>
+
+    <!-- GIT -->
+
+    <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 9 ><b>Version Control System</b>
+        <span style="color:black;font-size: 25px; " class="badge #f368e0">10 Points</span>
+      </div>
+      <div class="collapsible-body"><span id="dis">
+         I Accidently commit my files state with flag. After that I am removed flag, and again commit that state.
+         Is my Flag is leaked ?
+      </span>
+
+         <div style="padding-top: 10px" class="center-align" id="open">
+        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Download Git Repository
+         <i class="material-icons right">device_hub</i>
+       </button>
+    </div>
+
+
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a target="_blank"  href="https://en.wikipedia.org/wiki/Version_control" class="collection-item">What is a Version control system?</a>
+        <a target="_blank" href="https://www.atlassian.com/git/tutorials/what-is-git" class="collection-item">What is Git?</a>
+        <a target="_blank" href="https://github.github.com/training-kit/downloads/github-git-cheat-sheet/" class="collection-item">How to use Git?</a>
+        <!-- <a href="#!" class="collection-item">What is mean by Javascript</a>
+        <a href="#!" class="collection-item">Chrome Developer tools</a> -->
+      </div>
+
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
+          <p>Enter the Flag:</p>
+          <input id="wire_in" type="text" class="validate">
+          <button onclick="c_wire()" class="btn red">Submit</button>
+        </div>
+ 
+      </div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      function c_wire(){
+      let flag_hash = '1ec4b606d5e06b565a7fba61bc9b5182';
+      let input = document.getElementById('wire_in').value;
+      let input_hash = md5(input)
+      console.log(input)
+
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge. Update to nearby event Coordinators.", function(){
       alertify.message('DONE');
       });
       }
@@ -627,8 +706,8 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">submit</i>
-
-          <input placeholder="Enter the flag" id="input" type="text" class="validate">
+          <p>Enter the Flag:</p>
+          <input  id="input" type="text" class="validate">
           <button onclick="c_six()" class="btn red">Submit</button>
         </div>
  

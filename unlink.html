@@ -54,10 +54,10 @@
 
       <h3 style="font-size: 20px;">Resources</h3>
       <div class="collection">
-        <a  href="#!" class="collection-item">What is Authentication?</a>
-        <a href="#!" class="collection-item">How authentication done in web?</a>
-        <a href="#!" class="collection-item">What is mean by Javascript</a>
-        <a href="#!" class="collection-item">Chrome Developer tools</a>
+        <a target="_blank" href="https://en.wikipedia.org/wiki/Authentication" class="collection-item">What is Authentication?</a>
+      <!--   <a href="#!" class="collection-item">How authentication done in web?</a> -->
+        <a href="https://en.wikipedia.org/wiki/JavaScript" class="collection-item">What is a Javascript</a>
+        <a href="https://developers.google.com/web/tools/chrome-devtools" class="collection-item">Chrome Developer tools</a>
       </div>
 
       <div style="padding-top: 20px;" class="center-align" id="form">
@@ -110,7 +110,7 @@
         <span style="color:black;font-size: 25px; " class="badge #f368e0">5 Points</span>
       </div>
       <div class="collapsible-body"><span id="dis">
-        HTTP is a stateless protocol,so we use some kind of mechanism to maintain session between the requests 
+        HTTP is a stateless protocol,so we use some kind of mechanism to maintain session between the requests [*] By the way Everyone Love cookies
       </span>
 
          <div style="padding-top: 10px" class="center-align" id="open">
@@ -123,8 +123,9 @@
 
       <h3 style="font-size: 20px;">Resources</h3>
       <div class="collection">
-        <a  href="#!" class="collection-item">What is a Session?</a>
-        <a href="#!" class="collection-item">Why and How is a session is maintained?</a>
+        <a target="_blank" href="https://en.wikipedia.org/wiki/HTTP_cookie" class="collection-item">HTTP cookie</a>
+        <a target="_blank"  href="http://www.lassosoft.com/Tutorial-Understanding-Cookies-and-Sessions" class="collection-item">Understanding Cookies and Sessions</a>
+        <a href="https://developers.google.com/web/tools/chrome-devtools" class="collection-item">Chrome Developer tools</a>
       <!--   <a href="#!" class="collection-item">What is mean by Javascript</a>
         <a href="#!" class="collection-item">Chrome Developer tools</a> -->
       </div>
@@ -318,13 +319,24 @@
         <span style="color:black;font-size: 25px; " class="badge #f368e0">50 Points</span>
       </div>
       <div class="collapsible-body"><span id="dis">
-         Enable Debugging in Production Is So Tempting,But Don't do that? Again I say Don't do It.Ok Whatever. <br> <b>Hint: The flag file located in the flask application root directory</b> 
+         Enable Debugging in Production Is So Tempting,But Don't do that? Again I say Don't do It.Ok Whatever. <br> <b>Hint: The flag file located in the flask application root directory</b>
+         <br>
+
       </span>
 
          <div style="padding-top: 10px" class="center-align" id="open">
-        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+        <button onclick="popup()"  class="btn waves-effect waves-light purple darken-3"  name="action">Open Challenge
          <i class="material-icons right">device_hub</i>
        </button>
+
+       <script type="text/javascript">
+         function popup(){
+            alertify
+      .alert("Challenge Application live in the Local Network, <b> Contact Nearby Event Coordinators, for the server IP Address. </b> and also disable the proxy in your system", function(){
+      alertify.message('DONE');
+      });
+         }
+       </script>
     </div>
 
 
@@ -389,7 +401,7 @@
 
 <div class="container">
 
-<div id="heading"><h1>Cryptography</h1></div>
+<div id="heading"><h1>Crypto / Number System</h1></div>
   <ul class="collapsible">
     <!-- END FIVE -->
     <li>
@@ -463,13 +475,14 @@
     <!-- Seven -->
 
      <li>
-      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 7 ><b>Playfair cipher</b>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 7 ><b>Everywhere is a Numbers</b>
         <span style="color:black;font-size: 25px; " class="badge #f368e0">10 Points</span>
       </div>
       <div class="collapsible-body"><span id="dis">
-         There is a Playfair cipher. decrypt the text, find the answer, submit the flag in the form of <b style="padding-left: 10px">mzctf{answer}</b>
+         Can You decode that ? <br>
+         <p style="text-align: center;"><b style="padding-left: 10px;">Hint: ( )64, ( )16, ( )2, ( )16</b></p>
         <p>The Flag in mzctf{youranswer} format</p>
-        <p>---WILL--BE-UPDATED_SOON----</p>
+        <p style="text-align: center;">bXpjdGY= 7B 01110010 01001111 01101111 00110111 7D</p>
         </span>
 
 <!-- 
@@ -482,9 +495,9 @@
 
       <h3 style="font-size: 20px;">Resources</h3>
       <div class="collection">
-        <a target="_blank"  href="https://en.wikipedia.org/wiki/Cryptography" class="collection-item">What is Mean By Cryptography</a>
-        <a href="https://en.wikipedia.org/wiki/Substitution_cipher" class="collection-item">Substitution cipher</a>
-        <a href="https://en.wikipedia.org/wiki/Playfair_cipher" class="collection-item">Playfair cipher</a>
+        <a target="_blank"  href="https://www.learnpolytechnic.com/electronics-engineering/digital-techniques/number-system/" class="collection-item">Number System – Definition </a>
+        <a href="https://en.wikipedia.org/wiki/Base64" class="collection-item">Base64 - Wikipedia</a>
+        <a type="_blank" href="http://www.asciitable.com/" class="collection-item">ASCII</a>
         <!-- <a href="#!" class="collection-item">Chrome Developer tools</a> -->
       </div>
 
@@ -493,9 +506,9 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">submit</i>
-
+          <p>Enter the Flag: </p>
           <input  id="playinput" type="text" class="validate">
-          <label for=""></label>
+          <!-- <label for=""></label> -->
           <button onclick="play()" class="btn red">Submit</button>
         </div>
  
@@ -613,10 +626,78 @@
    
     </li>
 
-    <!-- GIT -->
 
-    <li>
-      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 9 ><b>Version Control System</b>
+     <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 9 ><b>Steal login credentials</b>
+        <span style="color:black;font-size: 25px; " class="badge #f368e0">10 Points</span>
+      </div>
+      <div class="collapsible-body"><span id="dis">
+         Download the .pcap file from the download link <a href="#">Download .pcap file</a> <br>
+         Analyze the file, and find out (HTTP POST) packet, <br>
+         Get the login credential from that <br>
+         Open the Challenge website, Login with that 
+      </span>
+
+         <div style="padding-top: 10px" class="center-align" id="open">
+        <a target="_blank" href="http://http-is-not-secure.herokuapp.com/">
+          <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
+         <i class="material-icons right">device_hub</i>
+       </button>
+        </a> 
+    </div>
+
+
+      <h3 style="font-size: 20px;">Resources</h3>
+      <div class="collection">
+        <a target="_blank"  href="#" class="collection-item">What is Mean By Wireshark</a>
+        <a href="#" class="collection-item">Wireshark filters</a>
+       <!--  <a href="https://en.wikipedia.org/wiki/Playfair_cipher" class="collection-item">Playfair cipher</a> -->
+        <!-- <a href="#!" class="collection-item">Chrome Developer tools</a> -->
+      </div>
+
+      <div style="padding-top: 20px;" class="center-align" id="form">
+      <div class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">submit</i>
+          <p>Enter the Flag:</p>
+          <input  id="login_input" type="text" class="validate">
+          <button onclick="loginwire()" class="btn red">Submit</button>
+        </div>
+ 
+      </div>
+    </div>
+
+    </div>
+
+    <script type="text/javascript">
+      function loginwire(){
+      let flag_hash = 'f5f3e7e5052e982a7d33754371f4c6c1';
+      let input = document.getElementById('login_input').value;
+      let input_hash = md5(input)
+      console.log(input)
+
+      if (input_hash == flag_hash){
+        alertify
+      .alert("Flag Is Correct, Succesfully Completed Challenge. Update to nearby event Coordinators.", function(){
+      alertify.message('DONE');
+      });
+      }
+      else{
+         alertify
+      .alert("Wrong Flag", function(){
+      alertify.message('Retry');
+      });
+      }
+
+      }
+    
+    </script>
+   
+    </li>
+
+      <li>
+      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 10 ><b>Version Control System</b>
         <span style="color:black;font-size: 25px; " class="badge #f368e0">10 Points</span>
       </div>
       <div class="collapsible-body"><span id="dis">
@@ -667,72 +748,6 @@
       if (input_hash == flag_hash){
         alertify
       .alert("Flag Is Correct, Succesfully Completed Challenge. Update to nearby event Coordinators.", function(){
-      alertify.message('DONE');
-      });
-      }
-      else{
-         alertify
-      .alert("Wrong Flag", function(){
-      alertify.message('Retry');
-      });
-      }
-
-      }
-    
-    </script>
-   
-    </li>
-
-<!-- TEN -->
-
-     <li>
-      <div class="collapsible-header"><i class="material-icons">flag</i>Challenge 10 ><b>Trace Logz</b>
-        <span style="color:black;font-size: 25px; " class="badge #f368e0">10 Points</span>
-      </div>
-      <div class="collapsible-body"><span id="dis">
-         There is a Playfair cipher. decrypt the text, find the answer, submit the flag in the form of <b style="padding-left: 10px">mzctf{answer}</b>
-      </span>
-
-         <div style="padding-top: 10px" class="center-align" id="open">
-        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Open Challenge
-         <i class="material-icons right">device_hub</i>
-       </button>
-    </div>
-
-
-      <h3 style="font-size: 20px;">Resources</h3>
-      <div class="collection">
-        <a target="_blank"  href="https://en.wikipedia.org/wiki/Cryptography" class="collection-item">What is Mean By Cryptography</a>
-        <a href="https://en.wikipedia.org/wiki/Substitution_cipher" class="collection-item">Substitution cipher</a>
-        <a href="https://en.wikipedia.org/wiki/Playfair_cipher" class="collection-item">Playfair cipher</a>
-        <!-- <a href="#!" class="collection-item">Chrome Developer tools</a> -->
-      </div>
-
-      <div style="padding-top: 20px;" class="center-align" id="form">
-      <div class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">submit</i>
-          <p>Enter the Flag:</p>
-          <input  id="input" type="text" class="validate">
-          <button onclick="c_six()" class="btn red">Submit</button>
-        </div>
- 
-      </div>
-    </div>
-
-    </div>
-
-    <script type="text/javascript">
-      function c_six(){
-      let flag_hash = 'f97c5d29941bfb1b2fdab0874906ab82';
-      let input = document.getElementById('input').value;
-      let input_hash = md5(input)
-      console.log(input)
-
-      if (input_hash == flag_hash){
-        alertify
-      .alert("Flag Is Correct, Succesfully Completed Challenge 1. Update to nearby event Coordinators.", function(){
       alertify.message('DONE');
       });
       }

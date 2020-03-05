@@ -553,9 +553,14 @@
       </span>
 
          <div style="padding-top: 10px" class="center-align" id="open">
-        <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Download .pcap file
-         <i class="material-icons right">device_hub</i>
-       </button>
+        <a target="_blank" href="https://drive.google.com/file/d/1_6zimjFm3otXueonUtqBoNh1BPpWXlM3/view?usp=sharing">
+        
+          <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Download .pcap file
+            <i class="material-icons right">device_hub</i>
+          </button>
+        
+        </a> 
+        
     </div>
 
 
@@ -620,9 +625,11 @@
       </span>
 
          <div style="padding-top: 10px" class="center-align" id="open">
+        <a target="_blank" href="https://drive.google.com/file/d/1zCnzaL2FIlWAfjDJVXV_dPx7TanYYdYg/view?usp=sharing">
         <button  class="btn waves-effect waves-light purple darken-3" type="submit" name="action">Download Git Repository
          <i class="material-icons right">device_hub</i>
        </button>
+      </a>
     </div>
 
 
@@ -641,8 +648,8 @@
         <div class="input-field col s12">
           <i class="material-icons prefix">submit</i>
           <p>Enter the Flag:</p>
-          <input id="wire_in" type="text" class="validate">
-          <button onclick="c_wire()" class="btn red">Submit</button>
+          <input id="git_in" type="text" class="validate">
+          <button onclick="git()" class="btn red">Submit</button>
         </div>
  
       </div>
@@ -651,11 +658,11 @@
     </div>
 
     <script type="text/javascript">
-      function c_wire(){
-      let flag_hash = '1ec4b606d5e06b565a7fba61bc9b5182';
-      let input = document.getElementById('wire_in').value;
+      function git(){
+      let flag_hash = '7ba24eef794ed489aca4a35112278cd9';
+      let input = document.getElementById('git_in').value;
       let input_hash = md5(input)
-      console.log(input)
+      console.log(`Input file hash: ${input_hash}, Actual file Hash ${flag_hash}`)
 
       if (input_hash == flag_hash){
         alertify
@@ -779,6 +786,10 @@ button.ajs-button.ajs-ok{
   background-color: red;
   color: white
 }
+.collection a.collection-item{
+  color: darkblue;
+}
+
 </style>
 
 
